@@ -1,0 +1,60 @@
+% Customization file for the titlepage and document
+%************************************************************
+% Required stuff
+%************************************************************
+\usepackage{graphicx}
+\usepackage{euler}
+\usepackage[detect-all]{siunitx}
+\usepackage{sectsty}
+\allsectionsfont{\rmfamily}
+
+% Page customization
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Color
+\usepackage{color}
+\definecolor{light-gray}{gray}{0.85}
+\definecolor{dark-gray}{gray}{0.75}
+
+\fancyhead{}  % clear all header fields
+\fancyhead[LO,RE]{{\color{dark-gray}\fontsize{9}{11} \selectfont \myPhase}}
+\fancyhead[RO,LE]{\includegraphics[height=0.7cm,keepaspectratio]{gfx/Skyward_logo}}
+\fancyhead[CO,CE]{{\color{dark-gray}\fontsize{9}{11} \selectfont \myIPT}}
+\fancyfoot{}  % clear all footer fields
+\fancyfoot[RO,LE]{\fontsize{6}{11} \selectfont \includegraphics[height=0.2cm]{gfx/CC} This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.}
+\fancyfoot[RE,LO]{\fontsize{9}{11} \selectfont \thepage}
+\fancyheadoffset[LE,RO]{0.2pt}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+   \leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{%
+    \leaders\hrule height \headrulewidth\hfill}}
+\hypersetup{colorlinks=true, linkcolor=blue ,linktoc=page,citecolor=black}
+
+
+%************************************************************
+% Fancy stuff
+%************************************************************
+\newcommand{\titlecap}[1]{\huge{\textrm{#1}}}
+\newcommand{\subtitlecap}[1]{\Large{\textsc{#1}}}
+\newcommand{\sscap}[1]{\textbf{#1}}
+\newcommand{\strong}[1]{\textbf{#1}}
+
+%************************************************************
+% Helpful stuff to modify here, not in the LyX Document
+%************************************************************
+\newcommand{\myDate}{\today}
+\newcommand{\myGroup}{Skyward Experimental Rocketry}
+\newcommand{\myUrl}{\url{http://www.skywarder.eu}}
+\newcommand{\myUni}{Politecnico di Milano}
+
+\newcommand{\myPhase}{Lesson V}
+\newcommand{\myProject}{Aerospace System Guidance and Control}
+\newcommand{\myIPT}{Aerospace System Guidance and Control}
+\newcommand{\myTitle}{Arduino Basics}
+\newcommand{\myAuthor}{Francescodario Cuzzocrea}
+\newcommand{\myEditor}{Edoardo Codispoti}
+
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}

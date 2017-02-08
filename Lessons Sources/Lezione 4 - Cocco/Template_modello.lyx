@@ -1,0 +1,1561 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\input{Settings.tex}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans helvet
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc true
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement bph
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 4cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titlepage.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titleback.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Introduction
+\end_layout
+
+\begin_layout Section
+\noindent
+Simulink
+\end_layout
+
+\begin_layout Standard
+\noindent
+Simulink provides a graphical interface that allows you to dene and build
+ the model through its block diagram.
+ The blocks are transported and moved on the work surface by the mouse.
+ Simulink includes a large number of libraries that contain many blocks
+ capable of performing operations (more or less elementary) on signals.
+ Simulink fully integrates with MATLAB.
+ Simulink starts by typing << Simulink >> on the MATLAB prompt or press
+ the Simulink icon in the MATLAB toolbar 1.1.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_001.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Simulink
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+• Simulink and MATLAB interacting through the workspace;
+\end_layout
+
+\begin_layout Standard
+\noindent
+• The model parameters can be specied within the Simulink blocks using symbolic
+ variables, whose value is stored in the workspace of MATLAB;
+\end_layout
+
+\begin_layout Standard
+\noindent
+• Simulation results can be stored by block called To workspace 
+\end_layout
+
+\begin_layout Section
+\noindent
+Getting started
+\end_layout
+
+\begin_layout Standard
+\noindent
+Simulink new model can be open by clicking New model in the upper left
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_002.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+New Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In order to create a block model, following instruction has to be done •
+ Copying blocks (subsystems) necessary to create the calculation model you
+ want inside the working area • Connect blocks with arrows made with mouse
+ • Select the simulation parameters • Start the simulation and results analysis
+ The Blocks of the model can be choosen by Simulink libraries or dened by
+ user, and the copy can be made dragging blocks from libraries to workspace.
+ Libraries can be selected by icons shown in Fig.1.2
+\end_layout
+
+\begin_layout Section
+\noindent
+Most important blocks
+\end_layout
+
+\begin_layout Standard
+\noindent
+The Simulink's libraries as said in the previous section oers a lot of blocks
+ but most used blocks can be found in the libraries showed in the figure
+ below :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename gfx/Selezione_003.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Most important blocks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Pulse Response
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this chapter the pulse response of a generic system will be studied the
+ system will be build on simulink and system's step response will be tested,
+ this test is a preliminary analysis of system's stability.
+ The generic system of this example is described by the following transfer
+ function
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+G(s)=\frac{-s+1}{s^{2}+2s+2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\noindent
+Simulink Model
+\end_layout
+
+\begin_layout Standard
+\noindent
+The model is composed by a transfer function, scope, and pulse input, these
+ blocks can be found respectively from Continuos,Sinks,Sources libraries,
+ so the simulink model is showed in Fig.2.1
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_004.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Simulink Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and the output (scope) is showed below :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_005.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Scope
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Blimp system's stability
+\end_layout
+
+\begin_layout Standard
+\noindent
+Blimp dynamic model can be written in a Laplace domain and the system's
+ transfer function can be implemented on Simulink in order to study the
+ dynamic stability of the system excited by a pulse input.
+ Blimp's equations of motion are reported below 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• Altitude
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\ddot{z(t)=\frac{1}{m}((T_{1}+T_{2})\Theta(t)-2\rho\dot{z(t)Sc_{D})}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+in Laplace domain it become
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+z(s)=\frac{T}{(ms^{2}+2\rho Sc_{D}s)}\Theta(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Where 
+\begin_inset Formula $T=T_{1}+T_{2}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\noindent
+•Yaw
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\ddot{\ddot{\psi}(t)=\frac{1}{J}((T_{1}(t)-T_{2}(t))d-\rho Sc_{D}\frac{L^{2}}{4}\dot{\dot{\psi(t)})}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+in the Laplace domain
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\psi(s)=\frac{(T_{1}(s)-T_{2}(s))}{(Js^{2}+\rho Sc_{D}\frac{L^{2}}{4}s)}d
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+is the righet engine and 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+is the left.
+\end_layout
+
+\begin_layout Section
+\noindent
+Altitude stability
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this section, altitude's transfer function will be implemented on simulink
+ and it's stability will be tested by using pulse input.
+ This analysis allow to understood the dynamic behavior of the system under
+ the external perturbation.
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Simulink Model
+\end_layout
+
+\begin_layout Standard
+\noindent
+As already seen in chapter 2 the transfer function block can be use to build
+ the laplace model of the system, however in this example the coecients
+ of numerator and denominator of transfer function have to be calculated
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Data
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $\rho$
+\end_inset
+
+= 1.225
+\begin_inset Formula $Kg/m^{3}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $T$
+\end_inset
+
+ = 10 N 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $m_{tot}$
+\end_inset
+
+ = 2 
+\begin_inset Formula $Kg$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $c_{D}$
+\end_inset
+
+ = 0.3 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $S$
+\end_inset
+
+ =
+\begin_inset Formula $\pi R^{2}$
+\end_inset
+
+= 
+\begin_inset Formula $\pi*0.2^{2}$
+\end_inset
+
+ = 
+\begin_inset Formula $0.1257m^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+And so, the transfer function is
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+z(s)=\frac{10}{(2s^{2}+0.094s)}\Theta(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and below is showed the relative model :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_006.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Altitude Simulink Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and the system response:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_007.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+System response
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_008.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pulse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+As showed by the figure, the system is unstable, so if the system is excited
+ by any input (perturbation) it will never come back to original position.
+ Now it should be clear that the system must be controlled in order to keep
+ desired position (altitude) or direction (angle between longitudinal axis
+ and target) and to stabilize it against the perturbations.
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Controlled altitude
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this section will be implemented a simple PID controller, the purpose
+ is to show that the controller makes the system stable and it allow to
+ reach the nal altitude (target).
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_009.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Simulink Controlled Altitude
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Fig.3.5 shows the altitude and the engine angle that the controller have used
+ in order to reach the target :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_010.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Altitude and engine angle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The constants of controller PID used for this example are 0.1 for the proportiona
+l term and 0.3 for the derivative.
+ These constants are not obtained with some algebraic equations but by some
+ dierent shooting , that isn't a rigorous method but it's used in most of
+ pratical cases.
+\end_layout
+
+\begin_layout Section
+\noindent
+Yaw stability
+\end_layout
+
+\begin_layout Standard
+\noindent
+As was done in the previous section the yaw's stability will be investigated,
+ it will be showed that the system isn't stable like altitude's system,
+ instead the control of yaw will be developed in the next lessons.
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Simulink model
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Data
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $J$
+\end_inset
+
+ = 
+\begin_inset Formula $m_{1}\frac{L^{2}}{4}+m_{2}\frac{L^{2}}{4}=m_{tot}\frac{L^{2}}{2}=1Kg*m^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $\rho$
+\end_inset
+
+= 1.225
+\begin_inset Formula $Kg/m^{3}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $m_{tot}$
+\end_inset
+
+ = 2 
+\begin_inset Formula $Kg$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $c_{D}$
+\end_inset
+
+ = 0.3 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $S$
+\end_inset
+
+ =
+\begin_inset Formula $\pi R^{2}$
+\end_inset
+
+= 
+\begin_inset Formula $\pi*0.2^{2}$
+\end_inset
+
+ = 
+\begin_inset Formula $0.1257m^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+• 
+\begin_inset Formula $d$
+\end_inset
+
+ = 0.1 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Transfer function is
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\psi(s)=\frac{0.1}{(s^{2}+0.0115s)}T(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $T(s)=T_{1}(s)-T_{2}(s)$
+\end_inset
+
+.
+ The respective model is
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_011.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Simulink Yaw Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The response is showed below
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_012.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pulse response
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_013.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pulse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+As said at the beginning of this section this system is unstable like the
+ altitude system, thus the control is necessary to stabilize it.
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Yaw PID
+\end_layout
+
+\begin_layout Standard
+\noindent
+As the altitude system, The yaw PID controller was implemented in order
+ to reach a target angle, the constants of PID used for this example are
+ obtained in the same manner of the altitude system by shooting .
+ The Fig.3.9 shows the Simulink Model
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_014.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Yaw Simulink Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+the response is showed below
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_015.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Yaw response
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The PID constants are P=3, D=10.
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Direct integration
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this chapter a direct integration of equations of motion will be implemented
+ on Simulink in order to show that the system is unstable also in time domain.
+\end_layout
+
+\begin_layout Section
+\noindent
+Altitude time domain
+\end_layout
+
+\begin_layout Standard
+\noindent
+Rearranging altitude's equation of motion it become
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\ddot{z(t)=\frac{1}{m}(T\Theta(t)-2\rho\dot{z(t)Sc_{D})}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and it can be implemented on Simulink as showed below
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_016.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Altitude time domain integration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and the response is showed in Fig.4.2
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_017.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Altitude time pulse response
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Comparing the response obtained with the Laplace transformation, it's easy
+ to see that these are the same graphics, as showed below
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_018.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Direct integration response and laplace response
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Yaw time domain
+\end_layout
+
+\begin_layout Standard
+\noindent
+Yaw time domain equation of motion is
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\ddot{\ddot{\psi}(t)=\frac{1}{J}((T_{1}(t)-T_{2}(t))d-\rho Sc_{D}\frac{L^{2}}{4}\dot{\dot{\psi(t)})}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+call 
+\begin_inset Formula $T=T_{1}-T_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\ddot{\ddot{\psi}(t)=\frac{1}{J}(T(t)d-\rho Sc_{D}\frac{L^{2}}{4}\dot{\dot{\psi(t)})}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+the model is
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_019.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Yaw time domain integration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The Fig.4.5 shows the comparison of the responses
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_020.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Yaw time domain integration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+So the responses are the same like in the altitude system.
+\end_layout
+
+\end_body
+\end_document

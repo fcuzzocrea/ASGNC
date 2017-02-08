@@ -1,0 +1,3232 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\input{Settings.tex}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans helvet
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc true
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement bph
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 4cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titlepage.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titleback.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+State of a Dynamic System
+\end_layout
+
+\begin_layout Standard
+\noindent
+The concept of the state of a dynamic system refers to a minimum set of
+ variables, known as state variables, that fully describe the system and
+ its response to any given set of inputs.
+ In particular a state-determined system model has the characteristic that:
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\shape italic
+<<A mathematical description of the system in terms of minimum set of variable
+ 
+\begin_inset Formula $x_{i}(t),i=1...n$
+\end_inset
+
+ together with knowledge of those variables at an initial time 
+\shape default
+
+\begin_inset Formula $t>t_{0}$
+\end_inset
+
+
+\shape italic
+ are sufficient to predict the future system state and outputs for all time
+\shape default
+
+\begin_inset Formula $t>t_{0}$
+\end_inset
+
+ 
+\shape italic
+.
+ This definition asserts that the dynamic behavior of state-determined system
+ is completely characterized by the response of the set of n variables 
+\begin_inset Formula $x_{i}(t)$
+\end_inset
+
+, where the number n is defined order of the system.>>
+\end_layout
+
+\begin_layout Standard
+\noindent
+If the system is state-determined, knowledge of its state variables 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $(x_{1}(t_{0}),x_{2}(t_{0}),...,x_{n}(t_{0}))$
+\end_inset
+
+ at some initial time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+, and the inputs 
+\begin_inset Formula $u_{1}(t)$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{2}(t)$
+\end_inset
+
+ for 
+\begin_inset Formula $t>t_{0}$
+\end_inset
+
+ is sufficient to determine all future behavior of the system.
+ The state variables are an internal description of the system which completely
+ characterize the system state at any time t, and from which any output
+ variables 
+\begin_inset Formula $y_{i}(t)$
+\end_inset
+
+ may be computed.
+ System models constructed with the pure and ideal 
+\shape italic
+(linear)
+\shape default
+ one-port elements (such as mass, spring and damper elements) are state-determin
+ed system models.
+ For such systems the number of state variables, 
+\begin_inset Formula $n$
+\end_inset
+
+, is equal to the number of independent energy storage elements in the system.
+ The values of the state variables at any time 
+\begin_inset Formula $t$
+\end_inset
+
+ specify the energy of each energy storage element within the system and
+ therefore the total system energy, and the time derivatives of the state
+ variables determine the rate of change of the system energy.
+ Furthermore, the values of the system state variables at any time t provide
+ suﬃcient information to determine the values of all other variables in
+ the system at that time.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+\noindent
+The State Equation
+\end_layout
+
+\begin_layout Standard
+\noindent
+A standard form for the state equations is used throughout system dynamics.
+ In the standard form the mathematical description of the system is expressed
+ as a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ coupled ﬁrst-order ordinary diﬀerential equations, known as the state equations
+, in which the time derivative of each state variable is expressed in terms
+ of the state variables 
+\begin_inset Formula $x_{1}(t_{0}),x_{2}(t_{0}),...,x_{n}(t_{0})$
+\end_inset
+
+ and system inputs 
+\begin_inset Formula $u_{1}(t),u_{2}(t),...u_{r}(t)$
+\end_inset
+
+.
+ In the general case the form of the n is: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\dot{x_{1}}=f_{1}(\mathbf{x\textrm{,}u},t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\dot{x_{2}}=f_{2}(\mathbf{x\textrm{,}u},t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+...=...
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\dot{x_{n}}=f_{n}(\mathbf{x\textrm{,}u},t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\dot{x}=\nicefrac{dx_{i}}{dt}$
+\end_inset
+
+ and each of the function 
+\begin_inset Formula $f_{i}(\mathbf{x\textrm{,}u},t),i=1...n$
+\end_inset
+
+ may be a general non linear, time varynig function of the state variables,
+ the system inputs, and time.
+\end_layout
+
+\begin_layout Standard
+\noindent
+It is common to express the state equations in a vector form, in which the
+ set of 
+\begin_inset Formula $n$
+\end_inset
+
+ state variables is written as a 
+\shape italic
+state vector 
+\begin_inset Formula $\mathbf{x}(t)=[x_{1}(t),x_{2}(t),...,x_{n}(t)]^{T}$
+\end_inset
+
+, 
+\shape default
+and the set of 
+\begin_inset Formula $r$
+\end_inset
+
+ inputs is written as and input vector 
+\begin_inset Formula $\mathbf{u}(t)=[u_{1}(t),u_{2}(t),...,u_{r}(t)]^{T}$
+\end_inset
+
+.
+ Each state variable is a time varying component of the column vector 
+\begin_inset Formula $\mathbf{x}(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+This form of the state equations explicity represents the basic elements
+ contained in the definition of the state determined system.
+ Given a set of initial conditions (the value of the 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ at some time 
+\begin_inset Formula $t_{0})$
+\end_inset
+
+ and the inputs for 
+\begin_inset Formula $t>t_{0}$
+\end_inset
+
+, the state equations explicity specify the derivatives of all state variables.
+ The value of each state variable at some time 
+\begin_inset Formula $\triangle t$
+\end_inset
+
+ later may then be found by direct integration.
+\end_layout
+
+\begin_layout Standard
+\noindent
+This form of the state equations explicity represents the basic elements
+ contained in the definition of the state determined system.
+ Given a set of initial conditions (the values od the 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ at some time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+) and the inputs for 
+\begin_inset Formula $t>t_{0}$
+\end_inset
+
+, the state equations explicitly specify the derivatives of all state variables.
+ The value of each state variable at some time 
+\begin_inset Formula $\triangle t$
+\end_inset
+
+ later may then be found by direct integration.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The system state at any instant may be interpreted as a point in an 
+\shape italic
+n-
+\shape default
+dimensional 
+\shape italic
+state space
+\shape default
+, and the dynamic state response 
+\begin_inset Formula $\mathbf{x}(t)$
+\end_inset
+
+, can be interpreted as a path or trajectory traced out in the state space.
+\end_layout
+
+\begin_layout Standard
+\noindent
+In vector notation, the set of 
+\begin_inset Formula $n$
+\end_inset
+
+ equation in Eqs.
+ (1) may be written: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\dot{\mathbf{x}}=\mathbf{f}(\mathbf{x},\mathbf{u},t)
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{f}(\mathbf{x,u},t)$
+\end_inset
+
+ is a 
+\shape italic
+vector
+\shape default
+ function whit 
+\shape italic
+n
+\shape default
+ components 
+\begin_inset Formula $f_{i}(\mathbf{x,u},t)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this note, we restrict attention primarly to a description of systems
+ that are 
+\shape italic
+linear
+\shape default
+ and 
+\shape italic
+time-variant
+\shape default
+ (LTI), that is systems described by linear differential equations with
+ cosant coefficients.
+ For an LTI systems described by linear differential equations with costant
+ coefficients.
+ For an LTI system of order 
+\shape italic
+n
+\shape default
+, and with 
+\shape italic
+r
+\shape default
+ inputs, Eqs.
+ (1) become a set of n coupled firs-order linear differential equations
+ with costant coefficients:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\dot{x}_{1}= & a_{11}x_{1}+a_{12}x_{2}+...+a_{1n}x_{n}+b_{11}u_{1}+...+b_{1r}u_{r}\\
+\dot{x}_{2}= & a_{21}x_{1}+a_{22}x_{2}+...+a:_{2n}x_{n}+b_{21}u_{1}+...+b_{2r}u_{r}\\
+\vdots & \vdots\\
+\dot{x}_{n}= & a_{n1}x_{1}+a_{n2}x_{2}+...+a_{nm}x_{n}+b_{n1}u_{1}+...+b_{nr}u_{r}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the coefficient e 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+ are constants that describe the system.
+ This set of 
+\begin_inset Formula $n$
+\end_inset
+
+ equation define the deruvatuves of the state variables to be a weighted
+ sum of the state variables and the system inputs.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Equation (3) may be written compactly in a matrix form:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\begin{array}{c}
+\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{3}
+\end{bmatrix}\end{array}=\begin{bmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots &  &  & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{bmatrix}\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{bmatrix}+\begin{bmatrix}b_{11} & \cdots & b_{1r}\\
+b_{21} &  & b_{2r}\\
+\vdots &  & \vdots\\
+b_{n1} & \cdots & b_{nr}
+\end{bmatrix}\begin{bmatrix}u_{1}\\
+\vdots\\
+u_{r}
+\end{bmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+which may be summarized as: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{\dot{x}=Ax+Bu}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the state vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is a column vector of lenght 
+\begin_inset Formula $n$
+\end_inset
+
+, the input 
+\begin_inset Formula $\mathbf{u}$
+\end_inset
+
+ is a column vector of lenght 
+\begin_inset Formula $r$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ square matrix of the constant coefficients 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+, and 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times$
+\end_inset
+
+r matrix of the coefficients 
+\begin_inset Formula $b_{ij}$
+\end_inset
+
+ that weight inputs.
+\end_layout
+
+\begin_layout Section
+\noindent
+Output Equations.
+\end_layout
+
+\begin_layout Standard
+\noindent
+A system 
+\shape italic
+output 
+\shape default
+is defined to be any sysstem variable of interest.
+ A description of a physical system i terms of a set of state variables
+ does not necessarily include all of thevariables with an immediate (engineering
+) interest.
+ An important property of the linear state equation description is that
+ all system variables may be represented by a linear combination of the
+ state variables 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and the system inputs 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+.
+ An arbitrary output variable in a system of order 
+\begin_inset Formula $n$
+\end_inset
+
+ with 
+\begin_inset Formula $r$
+\end_inset
+
+ inputs may be written:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+y(t)=c_{1}x_{1}+c_{2}x_{2}+\ldots+c_{n}x_{n}+d_{1}u_{1}+\ldots+d_{r}u_{r}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the 
+\begin_inset Formula $c_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+ are constants.
+ If a total of 
+\begin_inset Formula $m$
+\end_inset
+
+ system variables are defined as outputs, the 
+\begin_inset Formula $m$
+\end_inset
+
+ such equations may be written as:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+y_{1}=c_{11}x_{1}+c_{2}x_{2}+\ldots+c_{1n}x_{n}+d_{11}u_{1}+\ldots+d_{1r}u_{r}\\
+y_{2}=c_{21}x_{1}+c_{22}x_{2}+\ldots+c_{2n}x_{n}+d_{21}u_{1}+\ldots+d_{2r}u_{r}\\
+\vdots\\
+y_{m}=c_{m1}x_{1}+c_{m2}x_{2}+\ldots+c_{nm}x_{n}+d_{m1}u_{1}+\ldots+d_{mr}u_{r}
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+or in a matrix form:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{bmatrix}y_{1}\\
+y_{2}\\
+\vdots\\
+y_{m}
+\end{bmatrix}=\begin{bmatrix}c_{11} & c_{12} & \ldots & c_{1n}\\
+c_{21} & c_{22} & \ldots & c_{2n}\\
+\vdots &  &  & \vdots\\
+c_{m1} & c_{m2} & \ldots & c_{mn}
+\end{bmatrix}\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{bmatrix}+\begin{bmatrix}d_{11} & \ldots & d_{1r}\\
+d_{21} &  & d_{2r}\\
+\vdots &  & \vdots\\
+d_{m1} & \ldots & d_{mr}
+\end{bmatrix}\begin{bmatrix}u_{1}\\
+\vdots\\
+u_{r}
+\end{bmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The output equations, Eqs.
+ (8), are commoly written in the compact form:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{y=Cx+Du}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+ is a column vector of the output variables 
+\begin_inset Formula $y_{i}(t)$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ is an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ matrix of the costant coefficients 
+\begin_inset Formula $c_{ij}$
+\end_inset
+
+that weight the state variables, and 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ is an 
+\begin_inset Formula $m\times r$
+\end_inset
+
+ matrix of the costant coefficients 
+\begin_inset Formula $d_{ij}$
+\end_inset
+
+ that weight the system inputs.
+ For many physical system the matrix 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ is the null matrix, ant the output equation reduces to a simple weighted
+ combination of the state variables:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{y=Cx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\noindent
+State Equation Based Modeling Procedure.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The complete system model for a linear time invariant sustem consists of:
+ 
+\shape italic
+i) 
+\shape default
+a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ state equations, defined in terms of the matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+, and 
+\shape italic
+ii) 
+\shape default
+a set of output equations that relate any output variables of interest to
+ the state variables and inputs, and expressed in terms of the 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ matrices.
+ The task of modeling the system it to derive the elements of the matrices,
+ and to write the system model in the form:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccc}
+\mathbf{\dot{x}} & = & \mathbf{Ax} & + & \mathbf{Bu}\\
+\mathbf{y} & = & \mathbf{Cx} & + & \mathbf{Du}
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The matrices 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ are properties of the system and are determined by the system structure
+ and elements.
+ The ouput equation matrices 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ are determined by the particular choice of output variables.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The overall modeling procedure developed in this chapter is based on the
+ following steps:
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+determination of the system order 
+\begin_inset Formula $n$
+\end_inset
+
+ and selection of a set of state variables from the linear graph system
+ representation;
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+generation of a set of state equations and the system 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+matrices using a well defined methodology.
+ This step is also based on the linear system description;
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+determination of a suitable set of output equations and derivation of the
+ appropriate 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ matrices.
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Transformation From State-Space Equations to Classical Form
+\end_layout
+
+\begin_layout Standard
+\noindent
+The transfer function and the classical input-output differential equation
+ for any system variable may be found directly from a state space representation
+ through the Laplace transform.
+\end_layout
+
+\begin_layout Standard
+\noindent
+For example, we can find the transfer function and a single first-order
+ differential equation relating the output 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ to the input 
+\begin_inset Formula $u(t)$
+\end_inset
+
+ for a system described by the first-order linear state and output equations:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccc}
+\frac{dx}{dt} & = & ax(t) & + & bu(t)\\
+y(t) & = & cx(t) & + & du(t)
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Thanks to Laplace transform, we can write the following expression:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+sX(s)=aX(s)+bU(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+which may be rewritten with the state variable 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $X(s)$
+\end_inset
+
+ ont the left-hand side:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+(s-a)X(s)=bU(s).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Then dividing by 
+\begin_inset Formula $(s-a)$
+\end_inset
+
+, solve for the state variable:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+X(s)=\frac{b}{s-a}U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and substitute into the Laplace transform of the output 
+\begin_inset Formula $Y(s)=cX(s)+dU(s)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+Y(s)=\left[\frac{bc}{s-a}+d\right]U(s)=\frac{ds+(bc-ad)}{(s-a)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The transfer function is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+H(s)=\frac{Y(s)}{U(s)}=\frac{ds+(bc-ad)}{(s-a)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The differential equation is found directly:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+(s-a)Y(s)=(ds+(bc-ad))U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and rewriting as a differential equation:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\frac{dy}{dy}-ay=d\frac{du}{dt}+(bc-ad)u(t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Classical representation of higher-order system may be derived in the same
+ way using the Laplace transform and matrix algebra.
+ A set of linear state and output equations written in standard form:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccc}
+\mathbf{\dot{x}} & = & \mathbf{Ax} & + & \mathbf{Bu}\\
+\mathbf{y} & = & \mathbf{Cx} & + & \mathbf{Du}
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+may be rewritten in the Laplace domain.
+ The system equations are then:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccc}
+s\mathbf{X}(s) & = & \mathbf{A}X(s) & + & \mathbf{B}U(s)\\
+\mathbf{Y}(s) & = & \mathbf{C}X(s) & + & \mathbf{D}U(s)
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and the state equations may be rewritten:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+s\mathbf{x}(s)-\mathbf{A}x(s)=[s\mathbf{I}-\mathbf{A}]\mathbf{x}(s)=B\mathbf{u}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the term 
+\begin_inset Formula $s\mathbf{I}$
+\end_inset
+
+ creates an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix with 
+\begin_inset Formula $s$
+\end_inset
+
+ on the leading diagonal and zeros elsewhere.
+\end_layout
+
+\begin_layout Standard
+\noindent
+(This step is necessary because matrix addition and substraction is only
+ defined for matrices of the same dimension.) The matrix 
+\begin_inset Formula $[s\mathbf{I}-\mathbf{A}]$
+\end_inset
+
+ which appears frequently throughout linear system theory it is a square
+ 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix with elements directly related to the 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ matrix:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+[s\mathbf{I}-\mathbf{A}]=\begin{bmatrix}(s-a_{11}) & -a_{12} & \ldots & -a_{1n}\\
+-a_{21} & (s-a_{22}) & \ldots & -a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+-a_{n1} & -a_{n2} & \ldots & (s-a_{nn})
+\end{bmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The state equations, written in the form of Eq.
+ (22), are a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ simultaneous operational expressions.
+ The common methods of solving linear algbric equations, for example Gaussion
+ elimination, Cramer's rule, the inverse matrix , elimination and substitution,
+ may be directly applied to linear operational equations such as Eq.
+ (22).
+\end_layout
+
+\begin_layout Standard
+\noindent
+For low-order single-input single-output systems (SISO) the transformation
+ to a classical formulation may be performed in the following steps:
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+take the Laplace transform of the state equations;
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+reorganize each state equation so that all terms in the state variables
+ are on the left-hand side;
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+treat the state equations as a set of simultaneous algebric equations and
+ solve for those state variables required to generate the ouput variable;
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+substitute for the state variables in the output equation;
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+write the output equation in operational form and identify the transfer
+ function;
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+use the transfer function to write a single differential equation between
+ the output variable and the system input.
+\end_layout
+
+\begin_layout Standard
+\noindent
+This method can illustrated with the following example, where we considered
+ the RLC elctric circuit shown in Fig.
+ 1:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_001.png
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+RLC circuit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Using Kirchoff's law, we can choose the capacitor voltage 
+\begin_inset Formula $v_{C}(t)$
+\end_inset
+
+ and the inductor current 
+\begin_inset Formula $i_{L}(t)$
+\end_inset
+
+ as state variable, and generates the following pair of state equations:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\frac{d}{dt}\begin{bmatrix}v_{c}\\
+i_{L}
+\end{bmatrix}=\begin{bmatrix}0 & 1/C\\
+-1/L & -R/L
+\end{bmatrix}\begin{bmatrix}v_{c}\\
+i_{L}
+\end{bmatrix}+\begin{bmatrix}0\\
+1/L
+\end{bmatrix}V_{in}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The required output equations is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+y(t)=\begin{bmatrix}1 & 0\end{bmatrix}\begin{bmatrix}v_{c}\\
+i_{L}
+\end{bmatrix}+[0]V_{in}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Step 1: 
+\series default
+in Laplace transform form the state equations are:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccc}
+sV_{C}(s) & = & 0V_{C}(s) & + & 1/CI_{L}(s) & + & 0V_{s}(s)\\
+1/LV_{C}(s) & = & -1/LV_{C}(s) & - & R/LI_{L}(s) & + & 1/LV_{s}(s)
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Step 2: 
+\series default
+reorganize the state equations:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccc}
+sV_{C} & - & 1/CI_{L}(s) & = & 0V_{s}\\
+1/LV_{C} & + & [s+R/L]I_{L}(s) & = & 1/LV_{s}
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Step 3: 
+\series default
+in this case we have two simultaneous operational equations in the state
+ variables 
+\begin_inset Formula $v_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $i_{L}$
+\end_inset
+
+.
+ The output equation requires only 
+\begin_inset Formula $v_{C}$
+\end_inset
+
+.
+ If Eq.
+ (27.1) is multiplied by 
+\begin_inset Formula $[s+R/L],$
+\end_inset
+
+and Eq.(27.2) is multiplied by 
+\begin_inset Formula $1/C$
+\end_inset
+
+, and the equations added, 
+\begin_inset Formula $I_{L}(s)$
+\end_inset
+
+ is eliminated:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+[s(s+R/L)+1/(LC)]V_{C}(s)=1/(LC)V_{s}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Step 4: 
+\series default
+the output equation is 
+\begin_inset Formula $y=v_{c}$
+\end_inset
+
+.
+ Operate on both sides of Eq.
+ (28) by 
+\begin_inset Formula $[s^{2}+(R/L)s+1/LC]^{-1}$
+\end_inset
+
+and write in quotient form:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+V_{C}(s)=\frac{1/LC}{s^{2}+(R/L)s+1/LC}V_{s}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Step 5: 
+\series default
+the transfer function 
+\begin_inset Formula $H(s)=V_{C}(s)/V_{s}(s)$
+\end_inset
+
+ is :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+H(s)=\frac{1/LC}{s^{2}+(R/L)s+1/LC}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Step 6: 
+\series default
+the differential equation relating 
+\begin_inset Formula $v_{C}$
+\end_inset
+
+to 
+\begin_inset Formula $V_{s}$
+\end_inset
+
+is :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\frac{d^{2}v_{C}}{dt^{2}}+\frac{R}{L}\frac{dv_{C}}{dt}+\frac{1}{LC}v_{C}=\frac{1}{LC}V_{s}(t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Cramer's Rule, for the solution of set of linear algebric equations , is
+ a useful method to apply to the solution of these equations.
+ In solving for the variable 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ in a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ linear algbric equations, such as 
+\begin_inset Formula $\mathbf{Ax}=\mathbf{b}$
+\end_inset
+
+ the rule states:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+x_{i}=\frac{det[\mathbf{A}^{(i)}]}{det[\mathbf{A}]}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{A}^{(i)}$
+\end_inset
+
+ is another 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix formed by replacing the 
+\shape italic
+i
+\shape default
+th column of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ with the vector 
+\begin_inset Formula $\mathbf{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+If:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+[s\mathbf{I}-\mathbf{A]}\mathbf{X}(s)=\mathbf{BU}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+then the relationship between the 
+\shape italic
+i
+\shape default
+th state variable and the input is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+X_{i}(s)=\frac{det\left[[s\mathbf{I}-\mathbf{A}]^{(i)}\right]}{det[s\mathbf{I}-\mathbf{A}]}U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $(s\mathbf{I}-\mathbf{A})^{(i)}$
+\end_inset
+
+is defined to be the matrix formed by replacing the 
+\family default
+\series default
+\shape italic
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+i
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+th column of 
+\begin_inset Formula $(s\mathbf{I}-\mathbf{A})$
+\end_inset
+
+with the column vector 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+.
+ The differential equation is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+det[s\mathbf{I}-\mathbf{A}]x_{i}=det[(s\mathbf{I}-\mathbf{A})^{(i)}]u_{k}(t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Then, riconsidering the previous example, using Cramer's Rule, we can solve
+ for 
+\begin_inset Formula $v_{L}(t)$
+\end_inset
+
+ in the following way.
+ The output equation of state model is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+v_{L}=-v_{C}-Ri_{L}+V_{s}(t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the Laplace domain the state equations are:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{bmatrix}s & -1/C\\
+1/L & s+R/L
+\end{bmatrix}\begin{bmatrix}V_{c}(s)\\
+I_{L}(s)
+\end{bmatrix}=\begin{bmatrix}V_{c}(s)\\
+I_{L}(s)
+\end{bmatrix}V_{in}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The voltage 
+\begin_inset Formula $V_{C}(s)$
+\end_inset
+
+ is given by:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+V_{C}(s)=\frac{det\left[[s\mathbf{I}-\mathbf{A}]^{(1)}\right]}{det[s\mathbf{I}-\mathbf{A}]}V_{in}(s)=\frac{det\begin{bmatrix}0 & -1/C\\
+1/L & (s+R/L)
+\end{bmatrix}}{det\begin{bmatrix}s & -1/C\\
+1/L & s+R/L
+\end{bmatrix}}V_{in}(s)=\frac{1/LC}{s^{2}+(R/L)s+(1/LC)}V_{in}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The current 
+\begin_inset Formula $I_{L}(s)$
+\end_inset
+
+ is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+I_{L}(s)=\frac{det\left[[s\mathbf{I}-\mathbf{A}]^{(2)}\right]}{det[s\mathbf{I}-\mathbf{A}]}V_{in}(s)=\frac{det\begin{bmatrix}s & 0\\
+1/L & 1/L
+\end{bmatrix}}{det\begin{bmatrix}s & -1/C\\
+1/L & s+R/L
+\end{bmatrix}}V_{in}(s)=\frac{R/L}{s^{2}+(R/L)s+(1/LC)}V_{in}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The output equation may be written directly from Laplace transform of Eq.
+ (36) and substituting Eqs.(38-39):
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\begin{alignat*}{1}
+V_{L}(s) & =-V_{C}(s)-RI_{L}(s)+V_{s}(s)
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+=\left[\frac{-1/LC}{s^{2}+(R/L)s+(1/LC)}+\frac{-R/L}{s^{2}+(R/L)s+(1/LC)}+1\right]V_{s}(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+=\frac{(-1/LC-(R/L)s+(s^{2}+(R/L)s+(1/LC))}{s^{2}+(R/L)s+(1/LC)}V_{s}(s)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+=\frac{s^{2}}{s^{2}+(R/L)s+(1/LC)}V_{s}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+giving the differential equation:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\frac{d^{2}v_{L}}{dt^{2}}+\frac{R}{L}\frac{dv_{L}}{dt}+\frac{1}{LC}v_{L}(t)=\frac{d^{2}V_{s}}{dt^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+For a single-input single-output (SISO) system the transfer function may
+ be found directly by evaluating the inverse matrix:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{X}(s)=(s\mathbf{I}-\mathbf{A})^{-1}\mathbf{B}U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Using the definition of the matrix inverse:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+[s\mathbf{I}-\mathbf{A}]^{-1}=\frac{adj[s\mathbf{I}-\mathrm{\mathbf{A}}]}{det[s\mathbf{I}-\mathbf{A}]},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{X}(s)=\frac{adj[s\mathbf{I}-\mathrm{\mathbf{A}}]\mathbf{B}}{det[s\mathbf{I}-\mathbf{A}]}U(s).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and substituting into the output equation gives:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{eqnarray}
+Y(s) & = & C[s\mathbf{I}-\mathbf{A}]^{-1}\mathbf{B}U(s)+\mathbf{D}U(s)=\left[C[s\mathbf{I}-\mathbf{A}]^{-1}+\mathbf{B}+\boldsymbol{D}\right]U(s).
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Expanding the inverse in terms of the determinant and the adjoint matrix
+ yields:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+Y(s)=\frac{Cadj(s\mathbf{I}-\mathrm{\mathbf{A}})\mathbf{B}+det[s\mathbf{I}-\mathbf{A}]\mathbf{D}}{det[s\mathbf{I}-\mathbf{A}]}U(s)=H(s)U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+so that the required differential equation may be found by expanding:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+det[s\mathbf{I}-\mathbf{A}]Y(s)=\left[Cadj(s\mathbf{I}-\mathrm{\mathbf{A}})\mathbf{B}+det[s\mathbf{I}-\mathbf{A}]\mathbf{D}\right]U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and taking the inverse Laplace transform of both sides.
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Transformation from Classical Form to State-Space Representation
+\end_layout
+
+\begin_layout Standard
+\noindent
+The block diagram provides a convenient method for deriving a set of state
+ equations for a system that is specified in terms of a single input/output
+ differential equation.
+ A set of 
+\begin_inset Formula $n$
+\end_inset
+
+ state variables can be identified as the outputs of integrators int the
+ diagram, and state equations can be written from the conditions at the
+ inputs to the integrator blocks (the derivative of state variables).
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let the differential equation representing the system be of order 
+\begin_inset Formula $n$
+\end_inset
+
+, and without loss of generality assume that the order of the polunomia
+ operators on both sides is the same:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+(a_{n}s^{n}+a_{n-1}s^{n-1}+\cdots+a_{0})Y(s)=(b_{n}s^{n}+b_{n-1}s^{n-1}+\cdots+b_{0})U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+We may multiply both sides of the equation by 
+\begin_inset Formula $s^{-n}$
+\end_inset
+
+ to ensure that all differential operators have been eliminated:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+(a_{n}+a_{n-1}s^{-1}+\cdots+a_{1}s^{-(n-1)}+a_{0}s^{-n})Y(s))\\
+=(b_{n}+b_{n-1}s^{-1}+\cdots+b_{1}s^{-(n-1)}+\cdots+b_{0}s^{-n})U(s)
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+from which the output may be specified in terms of a transfer function.
+ If we define a dummy variable 
+\begin_inset Formula $Z(s)$
+\end_inset
+
+, and split Eq.
+ (49) into two parts:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+Z(s)=\frac{1}{a_{n}+a_{n-1}s^{-1}+\cdots+a_{1}s^{-(n-1)}+a_{0}s^{-n}}U(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+Y(s)=(b_{n}+b_{n-1}s^{-1}+\cdots+b_{1}s^{-(n-1)}+b_{0}s^{-n})Z(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Eq.
+ (30) may be solved for 
+\begin_inset Formula $U(s)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+U(s)=(a_{n}+a_{n-1}s^{-1}+\cdots+a_{1}s^{-(n-1)}+a_{0}s^{-n})X(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and rearranged to generate a 
+\shape italic
+feedback
+\shape default
+ structure that can be used as the basis for a block diagramm:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+Z(s)=\frac{1}{a_{n}}U(s)-(\frac{a_{n-1}}{a_{n}}\frac{1}{s}+\cdots+\frac{a_{1}}{a_{n}}\frac{1}{s^{n-1}}+\frac{a_{0}}{a_{n}}\frac{1}{s^{-n}})Z(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The dummy variable 
+\begin_inset Formula $Z(s)$
+\end_inset
+
+ is specified in terms of the system input 
+\begin_inset Formula $u(t)$
+\end_inset
+
+ and a weighted sum of successive integrations of itself.
+ Equation (51) serves to combine the outputs from the integrators into output
+ 
+\begin_inset Formula $y(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+A set of state equations may be found from the block diagram by assigning
+ the state variables 
+\begin_inset Formula $x_{i}(t)$
+\end_inset
+
+ to the outputs of the 
+\begin_inset Formula $n$
+\end_inset
+
+ integrators.
+ Because of the direct cascade connection of the integrators, the state
+ equations take a very simple form.
+ By inspection:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccccc}
+\dot{x_{1}} & = & x_{2}\\
+\dot{x_{2}} & = & x_{3}\\
+\vdots &  & \vdots\\
+\dot{x}_{n-1} & = & x_{n}\\
+\dot{x}_{n} & = & -\frac{a_{0}}{a_{n}}x_{1} & - & \frac{a_{1}}{a_{n}}x_{2} & -\cdots- & \frac{a_{n-1}}{a_{n}}x_{n} & + & \frac{1}{a_{n}}u(t)
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the matrix form these equations are:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{bmatrix}\dot{x_{1}}\\
+\dot{x}_{2}\\
+\vdots\\
+\dot{x}_{n-2}\\
+\dot{x}_{n-1}\\
+\dot{x}_{n}
+\end{bmatrix}=\begin{bmatrix}0 & 1 & \cdots & 0 & 0\\
+0 & 0 & \cdots & 0 & 0\\
+\vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & \cdots & 1 & 0\\
+0 & 0 & \cdots & 0 & 1\\
+-\nicefrac{a_{0}}{a_{n}} & -\nicefrac{a_{1}}{a_{n}} & \cdots & -\nicefrac{a_{n-2}}{a_{n}} & -\nicefrac{a_{n-2}}{a_{n}}
+\end{bmatrix}\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n-2}\\
+x_{n-1}\\
+x_{n}
+\end{bmatrix}+\begin{bmatrix}0\\
+0\\
+\vdots\\
+0\\
+0\\
+1/a_{n}
+\end{bmatrix}u(t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ has a very distinctive form.
+ Each row, except the bottom one, is filled of zeros except for one in the
+ position just above the leading diagonal.
+ Equation (35) is a common form of the state equations, used in control
+ system theory and known as the 
+\shape italic
+phase variable
+\shape default
+ or companion form.
+ This form leads to a set of state variables which may not correspond to
+ any physical variables within the system.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The corresponding output relationship is specified by Eq.(51) by noting 
+\begin_inset Formula $X_{i}(s)=Z(s)/s^{(n+1+i)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+y(t)=b_{0}x_{1}+b_{1}x_{2}+b_{2}x_{3}+\cdots+b_{n-1}x_{n}+b_{n}z(t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+But 
+\begin_inset Formula $z(t)=dx_{n}/dt$
+\end_inset
+
+, which is found from the 
+\begin_inset Formula $n$
+\end_inset
+
+th state equation in Eq.
+ (34).
+ When substituted into Eq.(36) the output equation is: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+Y(s)=\left[\left(b_{1}-\frac{b_{n}a_{0}}{a_{n}}\right)\left(b_{1}-\frac{b_{n}a_{1}}{a_{n}}\right)\cdots\left(b_{1}-\frac{b_{n}a_{n-1}}{a_{n}}\right)\right]\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{bmatrix}+\frac{b_{n}}{a_{n}}u(t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+The Matrix Transfer Function
+\end_layout
+
+\begin_layout Standard
+\noindent
+For a multiple-input multiple-output system Eq.(22) is written in ters of
+ the 
+\begin_inset Formula $r$
+\end_inset
+
+ component input vector 
+\begin_inset Formula $\mathbf{U}(s)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{X}(s)=[s\mathbf{I}-\mathbf{A}]^{-1}\mathbf{BU}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+generating a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ simultaneous linear equations, where the matrix is 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+is 
+\begin_inset Formula $n\times r$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $m$
+\end_inset
+
+ component system output vector 
+\begin_inset Formula $\mathbf{Y}(s)$
+\end_inset
+
+ may be found by substituting this solution for 
+\begin_inset Formula $\mathbf{X}(s)$
+\end_inset
+
+ into the output equation as in Eq.(35):
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{Y}(s)=\mathbf{C}[s\mathbf{I}-\mathbf{A}]^{-1}\mathbf{B}\{\mathbf{U}(s)\}+\mathbf{D}\{\mathbf{U}(s)\}=\left[\mathbf{C}[s\mathbf{U}-\mathbf{A}]^{-1}B+\mathbf{D}\right]\{\mathbf{U}(s)\}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and expanding the inverse in terms of the determinant and the adjoint matrix:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathbf{Y}(s)=\frac{\mathbf{C}adj(s\mathbf{I}-\mathbf{A})\mathbf{B}+det[s\mathbf{I}-\mathbf{A}]\mathbf{D}}{det[s\mathbf{I}-\mathbf{A}]}\mathbf{U}(s)=\mathbf{H}(s)\mathbf{U}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbf{H}(s)$
+\end_inset
+
+ is defined to be the matrix transfer function realting the output vector
+ 
+\begin_inset Formula $\mathbf{Y}(s)$
+\end_inset
+
+ to the input vector 
+\begin_inset Formula $\mathbf{U}(s)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+H(s)=\frac{\mathbf{C}adj(s\mathbf{I}-\mathbf{A})\mathbf{B}+det[s\mathbf{I}-\mathbf{A}]\mathbf{D}}{det[s\mathbf{I}-\mathbf{A}]}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+For a system with 
+\begin_inset Formula $r$
+\end_inset
+
+ inputs 
+\begin_inset Formula $U_{1}(s),\ldots,U_{r}(s)$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ outputs 
+\begin_inset Formula $Y_{1}(s),\ldots,Y_{m}(s)$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{H}(s)$
+\end_inset
+
+ is as 
+\begin_inset Formula $m\times r$
+\end_inset
+
+ matrix whose elements are indiviudal scalr transfer functions realting
+ a given component of the output 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbf{Y}(s)$
+\end_inset
+
+ to a component of the input 
+\begin_inset Formula $\mathbf{U}(s)$
+\end_inset
+
+.
+ Expansion of Eq.
+ (41) generates a set of equations:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{bmatrix}Y_{1}(s)\\
+Y_{2}(s)\\
+\vdots\\
+Y_{m}(s)
+\end{bmatrix}=\begin{bmatrix}H_{11}(s) & H_{12}(s) & \cdots & H_{1r}(s)\\
+H_{21}(s) & H_{22}(s) & \cdots & H_{2r}(s)\\
+\vdots & \vdots & \ddots & \vdots\\
+H_{m1}(s) & H_{m2}(s) & \cdots & H_{mr}(s)
+\end{bmatrix}\begin{bmatrix}U_{1}(s)\\
+U_{2}(s)\\
+\vdots\\
+U_{r}(s)
+\end{bmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the 
+\begin_inset Formula $i$
+\end_inset
+
+th component of the output vector 
+\begin_inset Formula $\mathbf{Y}(s)$
+\end_inset
+
+ is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+Y_{i}(s)=H_{i1}(s)U_{1}(s)+H_{i2}(s)U_{2}(s)+\cdots+H_{ir}(s)U_{s}(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The elemental transfer function 
+\begin_inset Formula $H_{ij}(s)$
+\end_inset
+
+ is the scalar transfer function between the 
+\begin_inset Formula $i$
+\end_inset
+
+th output component and the 
+\begin_inset Formula $j$
+\end_inset
+
+th input component.
+ Equation (61) shows that all the 
+\begin_inset Formula $H_{ij}(s)$
+\end_inset
+
+ transfer functions in 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbf{H}(s)$
+\end_inset
+
+ have the same denominator factor 
+\begin_inset Formula $det[s\mathbf{I}-\mathbf{A}]$
+\end_inset
+
+, giving the important polynomial, or alternatively have the same coefficients
+ on the left-hand side.
+\end_layout
+
+\begin_layout Standard
+\noindent
+If the system has single-input and single-output, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbf{H}(s)$
+\end_inset
+
+ is a scalr, and the procedure generates the input/output transfer operator
+ directly.
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Frequency Response
+\end_layout
+
+\begin_layout Section
+\noindent
+The Concept of Frequency Response
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the steady state, sinusoidal inputs to a linear system generate sinusoidal
+ responses of the same frequency.
+ Even though these responses have the same frequency of the input, they
+ differ in amplitude and phase angle from the input.
+ These differences are functions of frequency.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Before defining frequency response, let us look at a convenient representation
+ of sinusoids.
+ Sinuoids can be represebted as complex number is the amplitude of the sinusoid,
+ and the angle of the complex number is the phase angle of the sinusoids.
+ Thus, 
+\begin_inset Formula $M_{1}cos(\omega t+\phi_{1})$
+\end_inset
+
+can be represented as 
+\begin_inset Formula $M_{1}\angle\phi_{1}$
+\end_inset
+
+where the frequency, 
+\begin_inset Formula $\omega$
+\end_inset
+
+, is implicit.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Since a system causes both the amplitude and phase angle of the input to
+ be changed, we can think of the system itself as represented by a complex
+ number, defined so that the product of the input phasor and the system
+ function yields the phasor representation of the output.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Consider the mechanical system in Fig.(2) .
+ If the input force, 
+\begin_inset Formula $F(t)$
+\end_inset
+
+, is sinusoidal, the steady-state output respose, 
+\begin_inset Formula $x(t)$
+\end_inset
+
+, of the system is also sinusoidal and at the same frequencxy as the input.
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/Selezione_002.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+System
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Assume that the system is represented by the complex number, 
+\begin_inset Formula $M(\omega)\angle\phi(\omega)$
+\end_inset
+
+.
+ The ouput steady-state sinusoid is found by multiplying the complex number
+ representation of the input by the complex number representation of the
+ system.
+ Thus, the steady-state output sinusoid is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+M_{0}(\omega)\angle\phi_{o}=M_{i}(\omega)M(\omega)\angle[\phi_{i}(\omega)-\phi(\omega)]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\phi(\omega)=\phi_{o}(\omega)-\phi_{i}(\omega)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Equations (65) and (64) form our definition of frequency response.
+ We call 
+\begin_inset Formula $M(\omega)$
+\end_inset
+
+ the 
+\shape italic
+magnitude
+\shape default
+ 
+\shape italic
+frequency response
+\shape default
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\phi(\omega)$
+\end_inset
+
+ the 
+\family default
+\series default
+\shape italic
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+phase
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape italic
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+frequency response
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.
+ The combination of the magnitude and phase frequency responses is called
+ the 
+\family default
+\series default
+\shape italic
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+frequency response 
+\shape default
+and is 
+\begin_inset Formula $M(\omega)\angle\phi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+In other words, we define the magnitude frequency response to be the ratio
+ of the output sinusoid's magnitude to the input sinusoid's magnitude.
+ We define the phase response to be the difference in phase angle between
+ the output and the input sinusoids.
+ Both responses are function of frequency and apply only to the steady-state
+ sinusoidal response of the system.
+\end_layout
+
+\begin_layout Section
+\noindent
+Analytical Expressions for the Frequency Response.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Now that we have defined frequency response, let us obtain the analytical
+ expression for it.
+ Consider a system rappresented by a transfer function 
+\begin_inset Formula $G(s)$
+\end_inset
+
+, with the Laplace transform of general sinusoid, 
+\begin_inset Formula $r(t)=Acos(\omega t)+Bsin(\omega t)=\sqrt{A^{2}+B^{2}}cos[\omega t-arctan(B/A)]$
+\end_inset
+
+as the input.
+ We can represent the input as a phasor in three ways: 
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+polar form:,
+\begin_inset Formula $M_{i}\angle\phi_{i}$
+\end_inset
+
+, where 
+\begin_inset Formula $M_{i}=\sqrt{A^{2}+B^{2}}$
+\end_inset
+
+and 
+\begin_inset Formula $\phi_{i}=-arctan(B/A);$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+in rectangular form, 
+\begin_inset Formula $A-jB$
+\end_inset
+
+; 
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+using Euler's formula: 
+\begin_inset Formula $M_{i}\exp(j\phi_{i})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+We now solve for the forced response portion of 
+\begin_inset Formula $C(s)$
+\end_inset
+
+, from whic we evaluate the frequency response.
+ Rembering that the Laplace transfor of a sinuoid is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\mathcal{L}[sin(\omega t)]=\frac{As+B\omega}{s^{2}+\omega^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+we have:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+C(s)=\frac{As+B\omega}{s^{2}+\omega^{2}}G(s)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+We separate the forced solution from the transient solution by performing
+ a partial fraction on Eq.(67).
+ Thus,
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+C(s)=\frac{As+B\omega}{(s+\omega)(s-\omega)}G(s)=\frac{K_{1}}{s+j\omega}+\frac{K_{2}}{s-j\omega}+\ldots
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+K_{1}=\frac{As+B\omega}{s-j\omega}G(s)\mid_{s\longrightarrow-j\omega}=\frac{1}{2}(A+jB)G(-j\omega)=\frac{1}{2}M_{i}\exp(-j\phi_{i})M\exp(-j\phi_{G})=\\
+=\frac{M_{i}M}{2}\exp(j(\phi_{i}+\phi_{G}))
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+K_{2}=\frac{As+B\omega}{s-j\omega}G(s)\mid_{s\longrightarrow+j\omega}=\frac{1}{2}(A+jB)G(j\omega)=\frac{1}{2}M_{i}\exp(j\phi_{i})M\exp(j\phi_{G})=\\
+=\frac{M_{i}M}{2}\exp(j(\phi_{i}+\phi_{G}))=K_{1}^{*}
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+For Eqs.(69-70), 
+\begin_inset Formula $K_{1}^{*}$
+\end_inset
+
+is the complex conjugate of 
+\begin_inset Formula $K_{1}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+M_{G}=|G(j\omega)|
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\phi_{G}=\angle G(j\omega)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The steady-state response is that portion of the partial-fraction expansion
+ that comes from input waveform's poles, or just the first two terms of
+ Eq.(68).
+ Hence, the sinusoidal steady-state output, 
+\begin_inset Formula $C_{ss}(s),$
+\end_inset
+
+is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+C_{ss}(s)=\frac{K_{1}}{s+j\omega}+\frac{K_{2}}{s-j\omega}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Substituing Eqs.
+ (69-70) into Eq.(73), we obtain:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+C_{ss}(s)=\frac{\frac{M_{i}M}{2}\exp(j(\phi_{i}+\phi_{G}))_{1}}{s+j\omega}+\frac{\frac{M_{i}M}{2}\exp(j(\phi_{i}+\phi_{G}))}{s-j\omega}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Taking the inverse Laplace transformation, we obtain:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+c(t)=M_{i}M_{G}\left(\frac{\exp(-j(\omega t+\phi_{i}+\phi_{G}))+\exp(j(\omega t+\phi_{i}+\phi_{G}))}{2}\right)\\
+=M_{i}M_{G}\cos(\omega t+\phi_{i}+\phi_{G})
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+which can be rapresented in phasor formas 
+\begin_inset Formula $M_{o}\angle\phi_{o}=(M_{1}\angle\phi_{i})(M_{G}\angle\phi_{G})$
+\end_inset
+
+, where 
+\begin_inset Formula $M_{G}\angle\phi_{G}$
+\end_inset
+
+ is the frequency response function.
+ But, from Eqs.(71) and (72) 
+\begin_inset Formula $M_{G}\angle\phi_{G}$
+\end_inset
+
+.
+ In other words, the frequency response of a system whose transfer function
+ is 
+\begin_inset Formula $G(s)$
+\end_inset
+
+ is:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{equation}
+G(j\omega)=G(s)|_{s\longrightarrow j\omega}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

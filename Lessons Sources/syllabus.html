@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>syllabus</title>
+
+<style media="screen" type="text/css">
+body{line-height: 160%;
+font-family: Arial, Helvetica, sans-serif;
+padding-left: 40px;
+}
+h1,h2,h3,h4 {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif;
+letter-spacing: -1px;
+}
+h1, h2 {
+margin-left: -40px;
+border-bottom: 1px solid #ddd;
+padding-bottom: 10px;
+}
+h2 {
+padding-top: 20px;
+}
+a:link {
+color: #005fce;
+}
+#copyright, #footer {
+border-top: 2px solid #ccc;
+line-height: 100%;
+padding: 10px 0 0 0;
+}
+#copyright {
+padding-bottom: 10px;
+margin-left: -40px;
+margin-top: 20px;
+}
+#footer {
+margin-left: -40px;
+}
+#footer ul {
+list-style: none;
+padding: 0;
+}
+#footer li {
+padding-right: 20px;
+display: inline;
+}
+#footer h2{
+padding: 0;
+border: none;
+}
+</style></head>
+<body>
+<h1>Aerospace System Guidance and Control</h1>
+Last updated: 12/11/2014<br>
+<h2>Authors Information :</h2>
+<span style="font-weight: bold;">Aureliano Rivolta</span>
+<br>Politecnico di Milano<br><br><span style="font-weight: bold;">Francescodario Cuzzocrea</span><br>
+Politecnico di Milano<br>
+<br>
+<span style="font-weight: bold;">Mattia Giurato</span>
+<br>Politecnico di Milano<br><br><span style="font-weight: bold;">Umberto Saetti</span><br>
+Politecnico di Milano<br>
+<br>
+<span style="font-weight: bold;">Edoardo Codispoti</span><br>
+Politecnico di Milano<br>
+<h2>Course Details</h2>
+<h3>Description</h3>
+This course was first held in Politecnico di Milano during April and July 2014, and it’s main goal was to give to our colleagues a practical approach to engineering.
+We’ve prepared some papers and models to give to the students the right tools (both theoretical tools, and practical tools) to understand what is model based design, what is control theory and how they can use Simulink for building a model of what happens in the real world, simulating it, and then, for building a Real Time Control System with an Arduino board.
+We will analyze the dynamics and the kinematics of a BLIMP, in order to obtain it’s equation of motion, so we can modelize the system in Simulink for designing a PID controller for altitude and another PID control for yaw.
+Then the model is transferred to an Arduino board via Simulink Support Package for Arduino, and a Custom Simulink Toolbox developed by ours specifically for  this course, in order to drive the sensors used on the Arduino Shield.
+<br>
+<br>
+<img style="width: 540px; height: 375px;" alt="BLIMP" src="image001.jpg"><br>
+Figure 1: The BLIMP builded for the course.
+<br>
+<br>In the first three lessons the students will gain the necessary theoretical basis and understandings of the BLIMP; in the fouth and the fifth lessons the studens will be guided in the practical use of Simulink. 
+The lessons fourth and fifth are also correlated by two examples of a PID control, and some simple example that the student can use to become familiar with the Arduino\Simulink integration.
+The CAD of the BLIMP and the Eagle files of the Arduino shield are also packaged in the zip package with the material of the course.
+<h3>Original Course Documents</h3>
+<a href="http://www.skywarder.eu/blog/blimp2014/">BLIMP 2014</a><br>
+<h2>Course Contents</h2>
+<h3>Lesson 1</h3>
+<ul>
+<li><a href="Lectures/lesson1_MATLAB_tutorial.pdf/">Introduction to MATLAB</a></li>
+</ul>
+<h3>Lesson 2</h3>
+<ul>
+<li><a href="Lectures/lesson2_dynamics_and_kinematics.pdf">Dynamics and Kinematics</a></li>
+</ul>
+<h3>Lesson 3</h3>
+<ul>
+<li><a href="Lectures/lesson3_System_State_Transfer_Function_and_Frequency_Response.pdf">System State, Transfer Fuctions and Frequency Response</a></li>
+</ul>
+<h3>Lesson 4</h3>
+<ul>
+<li><a href="Lectures/lesson4_Introduction_to_Simulink.pdf">Introduction to Simulink</a></li>
+</ul>
+<h3>Lesson 5</h3>
+<ul>
+<li><a href="Lectures/lesson5_arduino_basics.pdf">Arduino Basics</a></li>
+</ul>
+<h3>Lesson 6</h3>
+<ul>
+<li><a href="Lectures/lesson6_navigation.pdf">Navigation</a></li>
+</ul>
+<h2>Course Materials</h2>
+<h3>Lesson 4 - PID Simulators</h3>
+<ul>
+<li><a href="/Simulink%20Files/PID%20Simulator/imbardata.mdl">Yaw Simulator</a></li>
+</ul>
+<ul>
+<li><a href="/Simulink%20Files/PID%20Simulator/Quota.mdl">Altitude Simulator</a></li>
+</ul>
+<h3>Lesson 5 - Arduino Examples</h3>
+<ul>
+<li><a href="/Simulink%20Files/Examples/Servo.rar">Drive Servo Motor</a></li>
+</ul>
+<ul>
+<li><a href="/Simulink%20Files/Examples/Traffic_Light_Controller.rar">Traffic Light Controller</a></li>
+</ul>
+<h2>Course Tools</h2>
+<h3>Simulink BLIMP Target</h3>
+<ul>
+<li><a href="/Simulink%20Library/SkywardConfigureScript.m">Simulink Toolbox</a></li>
+</ul>
+<h2>Additional Materials</h2>
+<h3>Arduino Shield</h3>
+<ul>
+<li><a href="/Arduino%20Shield/">Eagle Files</a></li>
+</ul>
+<h3>BLIMP CAD</h3>
+<ul>
+<li><a href="/CAD/">Solidwors Files</a></li>
+</ul>
+<div id="copyright"><img style="width: 143px; height: 50px;" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png" alt="Creeative Commons Attribution"><br>
+This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative
+Commons Attribution-ShareAlike 3.0 Unported License</a>.
+</div>
+<div id="footer">
+Learn more about MathWorks academic resources:
+<ul>
+<li><a href="http://www.mathworks.com/academia/courseware/?s_tid=coursedwl">MATLAB
+Courseware</a></li>
+<li><a href="http://www.mathworks.com/academia/hardware/?s_tid=coursedwl">Hardware
+Resources</a></li>
+<li><a href="http://www.mathworks.com/academia/classroom-resources/?s_tid=coursedwl">Classroom
+Resources</a></li>
+<li><a href="http://www.mathworks.com/academia/matlab-examples/?s_tid=coursedwl">MATLAB
+Examples</a></li>
+<li><a href="http://www.mathworks.com/support/books/?s_tid=coursedwl">Books</a></li>
+<li><a href="http://www.mathworks.com/academia/student_center/tutorials/?s_tid=coursedwl">Tutorials</a></li>
+<li><a href="http://www.mathworks.com/company/events/webinars/index.html?q=%20sector:%22Education%22%20&amp;s_tid=coursedwl">Webinars</a></li>
+<li><a href="http://www.mathworks.com/company/newsletters/technicalarticles.html?sector=edu&amp;s_tid=coursedwl">Technical
+Articles</a></li>
+</ul>
+</div>
+</body></html>

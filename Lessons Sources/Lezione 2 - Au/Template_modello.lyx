@@ -1,0 +1,2645 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\input{Settings.tex}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans helvet
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc true
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement bph
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 4cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titlepage.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titleback.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Reference Frames
+\end_layout
+
+\begin_layout Standard
+\noindent
+Reference frames are necessary to address the dynamics and the kinematics
+ of an object or vehicle.
+ To understand the importance of a reference frame just think about the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+position
+\begin_inset Quotes erd
+\end_inset
+
+ of an object.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+The pen lies 10 cm on the right of the book
+\begin_inset Quotes erd
+\end_inset
+
+, such a statement is useless unless you define a direction, a verse and
+ a magnitude: a 
+\begin_inset Quotes eld
+\end_inset
+
+position
+\begin_inset Quotes erd
+\end_inset
+
+ vector.
+ We can express one vector in terms of other vectors, for example 
+\begin_inset Quotes eld
+\end_inset
+
+the pen is 6 cm along one side of the book and 8 cm on along the other side
+ of the book
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Mathematically speaking we must use unitary vectors to construct the base
+ of the vector space that we are using to define the position of the pen.
+ In the example we have used two sides of a book that are, of course, orthogonal
+: we have used an orthogonal reference frame.
+ It is possible to use different kinds of unitary vectors groups, but the
+ most simple reference frame has orthogonal unitary vectors.
+ We will use a right-hand reference frame so that you can easily picture
+ it using your right hand: the first axis is the thumb, the second axis
+ is the index and the third one is the middle finger.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Inertial Reference Frame
+\end_layout
+
+\begin_layout Standard
+\noindent
+Going by Newton's 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+piccola ricerca
+\end_layout
+
+\end_inset
+
+ definition an inertial frame is a reference frame that is still or is moving
+ at constant velocity.
+ In reality there are no inertial systems, but depending on the case we
+ can assume that a certain reference can be considered inertial even if
+ it is accelerating or spinning.
+ If we walk along a corridor in the university for 3 minutes we can assume
+ that a reference frame fixed with the Earth is inertial, even if we know
+ that the planet is spinning around its axis and around the sun and so on.
+ However the rotation of the planet is so small that in few minutes the
+ difference won't be noticeable.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+NED Reference Frame
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the aeronautics one of the most used reference frame is the North East
+ Down frame.
+ This means that the first axis points to the geographical north, the second
+ to the geographical east and the third one towards the ground.
+ In many application it can be considered inertial, however for a intercontinent
+al plane this might not be the case.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Body Fixed Reference Frame
+\end_layout
+
+\begin_layout Standard
+\noindent
+This reference frame is attached to a body that accelerates and spin, therefore
+ it is a non-inertial reference frame.
+ A special reference frame of this kind is the so called Principal Axis
+ of Inertia reference frame, whose axis are coincident with the principal
+ axis of inertia of a body.
+ This will be useful later on when we will speak about the rotation dynamics.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Coordinate Systems
+\end_layout
+
+\begin_layout Standard
+\noindent
+Even if the reference frame is a tree-orthogonal-axis frame we can use different
+ coordinates to define the position of a point.
+ The easiest to use is the rectangular set where we have 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\begin_inset Formula $y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ that are the distance from the origin of a the projection of a point along
+ that axis.
+ in a two dimensional case we can use polar coordinates: the distance from
+ the origin 
+\begin_inset Formula $r$
+\end_inset
+
+ and the anomaly 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ that is the angle between the vector radius and one reference axis.
+ Adding one dimension we have cylindrical coordinates that adds the 
+\begin_inset Formula $z$
+\end_inset
+
+ axis similarly to the rectangular case and the spherical coordinates where
+ another angle 
+\begin_inset Formula $\phi$
+\end_inset
+
+ defines another inclination w.r.t another reference axis or plane.
+ In general Rectangular coordinates are preferred since the law of dynamics
+ can be expressed quite easily, however this is problem dependent.
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Law of Dynamics
+\end_layout
+
+\begin_layout Section
+\noindent
+Center of Mass
+\end_layout
+
+\begin_layout Standard
+\noindent
+The gravity force is one of the most important forces acting on an aerospace
+ vehicle, being it an airplane or a spacecraft.
+ Gravity is strictly correlated to the concept of mass, but we will not
+ address matter of physics or philosophy and we will concentrate onto more
+ practical aspects.
+ This means that we must understand how acts the gravity force and how we
+ can model it.
+ The center of mass is that point in (or outside, depending on circumstances)
+ the body where we can consider the gravity force to be applied.
+ To determine the center of mass of a body constituted by 
+\begin_inset Formula $N$
+\end_inset
+
+ smaller parts we can use the following:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+x_{cg}=\frac{\sum_{i}^{N}x_{i}m_{i}}{\sum_{i}^{N}m_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Of course when considering a continuous body we should use an integral relation,
+ however for practical purposes the center of mass of a vehicle can be obtained
+ by dividing it into sub parts.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+In general if the geometry of the body or one of its part is known and the
+ density of the constituting material is constant in all the body we have
+ that the center of mass coincides with the centroid of the body, that is
+ a geometrical property.
+ This implies that for complex geometries it is possible to split the body
+ into simpler parts and then compute the center of mass.
+\end_layout
+
+\begin_layout Standard
+\noindent
+This important location will be useful later on also for other considerations.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Linear Momentum Conservation
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Inertial Reference Frame
+\end_layout
+
+\begin_layout Standard
+\noindent
+The first law of dynamics, in a inertial reference frame, assumes the following
+ expression
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\left(m\mathbf{v}\right)=\mathbf{f}_{ext}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ is the velocity of the body, 
+\begin_inset Formula $m$
+\end_inset
+
+ its mass and 
+\begin_inset Formula $\mathbf{f}_{ext}$
+\end_inset
+
+ the equivalent external force applied to the body.
+ From this we can derive an Ordinary Differential Equation (ODE) to get
+ how the velocity of the body changes in time:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\dot{\mathbf{v}}=\frac{1}{m}\left(\mathbf{f}_{ext}-\dot{m}\mathbf{v}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+then the position can be easily computed integrating directly the velocity
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\dot{\mathbf{r}}=\mathbf{v}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Non-inertial reference frame
+\end_layout
+
+\begin_layout Standard
+\noindent
+If we write the laws of dynamics in a non inertial reference frame rotating
+ at constant speed we would have
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\dot{\mathbf{r}}_{i} & =\dot{\mathbf{r}}+\mathbf{\omega}\times\mathbf{r}\\
+\dot{\mathbf{v}}_{i} & =\dot{\mathbf{v}}+2\mathbf{\omega}\times\mathbf{v}+\mathbf{\omega}\times\mathbf{\omega}\times\mathbf{r}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{v}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}_{i}$
+\end_inset
+
+ are the position and velocity vector in the inertial reference frame.
+ Substituting the expressions that we saw before we would have
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\mathbf{v}_{i} & =\dot{\mathbf{r}}+\mathbf{\omega}\times\mathbf{r}\\
+\frac{1}{m}\left(\mathbf{f}_{ext}-\dot{m}\mathbf{v}_{i}\right) & =\dot{\mathbf{v}}+2\mathbf{\omega}\times\mathbf{v}+\mathbf{\omega}\times\mathbf{\omega}\times\mathbf{r}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+therefore 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\dot{\mathbf{r}} & =\mathbf{v}\\
+\dot{\mathbf{v}} & =\frac{1}{m}\left(\mathbf{f}_{ext}-\dot{m}\mathbf{v}\right)-2\mathbf{\omega}\times\mathbf{v}-\mathbf{\omega}\times\mathbf{\omega}\times\mathbf{r}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+This set of equations is valid for a constantly rotating body, however if
+ the angular velocity is changing there is another term to consider.
+ In many practical situation this complicated modification is avoided and
+ just the instantaneous angular velocity is used.
+ 
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Forces
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the term 
+\begin_inset Formula $\mathbf{f}_{ext}$
+\end_inset
+
+ we list the sum of all forces that are applied to the body in its center
+ of mass.
+ This forces can be of different nature
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{f}_{ext}=\sum\mathbf{f}_{aerodynamics}+\sum\mathbf{f}_{propulsive}+\sum\mathbf{f}_{gravitational}+\sum\mathbf{f}_{electromagnetic}+\dots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+we will limit it to the main components:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{f}_{ext}=\mathbf{t}+\mathbf{f}_{a}+m\mathbf{g}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{t}$
+\end_inset
+
+ is the thrust, 
+\begin_inset Formula $\mathbf{f}_{a}$
+\end_inset
+
+ the aerodynamic forces and 
+\begin_inset Formula $\mathbf{g}$
+\end_inset
+
+ is the gravity force per unit mass (acceleration).
+ 
+\begin_inset Formula $\mathbf{t}$
+\end_inset
+
+ usually depends on the engine of the vehicle: it can be a propeller, a
+ jet engine or even a rocket motor.
+ The nature of the engine will influence the expression of the thrust, since
+ it depends on environmental quantities such as the air density (or even
+ its absence).
+ It is easy to express in body fixed frame.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The aerodynamic forces can be written as 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{f}_{a}=\frac{1}{2}\rho v^{2}S\begin{Bmatrix}C_{x}\\
+C_{y}\\
+C_{z}
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is the air density, 
+\begin_inset Formula $v$
+\end_inset
+
+ is the modulus of the speed relative to the air (i.e.
+ vehicle speed and wind speed sums together), 
+\begin_inset Formula $S$
+\end_inset
+
+ is a reference surface and 
+\begin_inset Formula $C$
+\end_inset
+
+s are the coefficients obtained by experimentation or computation.
+ Usually such coefficients are computed by measuring the force the air puts
+ on a body and dividing it by the so called dynamic pressure 
+\begin_inset Formula $\frac{1}{2}\rho v^{2}$
+\end_inset
+
+ and the reference surface 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ These coefficient depends on many parameters such as the Mach Number, the
+ Reynolds number, the fluid orientation, the shape of the body and so on.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $\mathbf{g}$
+\end_inset
+
+ is measured as an acceleration and depends on the distance from the center
+ of the planet with a law such as 
+\begin_inset Formula $g\propto r^{-2}$
+\end_inset
+
+, therefore it weakens the more we distance ourselves from the center of
+ the Earth.
+ For near surface operation it can be considered quite constant.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Attention must be paid on the reference frames where the forces are expressed:
+ for example if the gravity force is computed in the inertial reference
+ frame and the equation of motion are expressed in the principal axis of
+ inertia reference frame it is needed a rotation to orient the force in
+ the used reference frame.
+ Rotation of a vector in 3D space is usually obtained by multiplying the
+ vector with a direction cosine matrix that changes only its orientation
+ and not its modulus.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Angular Momentum Conservation
+\end_layout
+
+\begin_layout Subsection
+\noindent
+NED reference frame
+\end_layout
+
+\begin_layout Standard
+\noindent
+Computing the angular momentum conservation in the NED reference frame,
+ as in many others frames, is quite difficult since the inertia tensor expressed
+ in such frames is not constant but depends inherently on the orientation.
+ To grasp this concept let us take a cylinder whose longitudinal axis is
+ 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ The inertia along this axis is way inferior with respect to the others,
+ therefore with the same torque applied it will rotate at much higher speed
+ on the 
+\begin_inset Formula $z$
+\end_inset
+
+ axis.
+ If we take an inertial reference frame with the 
+\begin_inset Formula $z$
+\end_inset
+
+ axis vertical and we impose the two axis to be parallel, then the inertia
+ tensor will be the same.
+ However if we let the cylinder rotate so that its 
+\begin_inset Formula $z$
+\end_inset
+
+ axis is aligned with the horizontal plane, the inertia expressed in the
+ inertial frame has changed, while the inertia in the body frame has not.
+ 
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Principal Inertia Axis reference frame
+\end_layout
+
+\begin_layout Standard
+\noindent
+We can express the rotation dynamics in the principal axis of inertia in
+ order to simplify the problem.
+ In this reference the inertia tensor is kept constant (if mass doesn't
+ change) and it is easier to handle the computation since the tensor is
+ simplified.
+ By definition the center of this frame is the center of mass, therefore
+ under these hypothesis we can easily write 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{I}\frac{d}{dt}\omega=\omega\times\mathbf{I}\omega+\mathbf{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the inertia tensor assumes the particular form of a diagonal tensor.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{I}=\begin{bmatrix}\mathbf{I}_{x} & 0 & 0\\
+0 & \mathbf{I}_{y} & 0\\
+0 & 0 & \mathbf{I}_{z}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The principal axis of inertia of a body can be computed knowing the inertia
+ tensor in any kind of reference frame that is centered on the center of
+ mass and fixed with the body.
+ Simply by applying the diagonalization procedure we can determine the rotation
+ that allows the matrix representing the inertia tensor to be diagonal.
+ 
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Kinematics
+\end_layout
+
+\begin_layout Standard
+\noindent
+With the term Kinematics we will simply refer to the variation in time of
+ the attitude of a body in space.
+ From the dynamics we can compute the angular velocity history, however
+ we need to take another step to understand how a body rotates in space
+ given its angular velocity.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Direction Cosine Matrix
+\end_layout
+
+\begin_layout Standard
+\noindent
+The direction cosine matrix is a three by three matrix that represent the
+ Cartesian components of a reference frame in another reference frame.
+ we define such matrix as 
+\begin_inset Formula $\mathbf{R}_{12}$
+\end_inset
+
+ such that holds the following relation 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{x}_{1}=\mathbf{R}_{12}\mathbf{x}_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{x}_{1}$
+\end_inset
+
+ is a vector in a reference frame 1 and 
+\begin_inset Formula $\mathbf{x}_{2}$
+\end_inset
+
+ is the same vector expressed in the frame 2.
+ The matrix 
+\begin_inset Formula $\mathbf{R}_{12}$
+\end_inset
+
+ is an orthogonal matrix with determinant equal to 1 that permits the rotation
+ from the reference 2 to the reference 1.
+ Its column are the coordinates of each axis of frame 2 written in components
+ of the frame 1.
+ These components can be expressed as cosines of angles between axis, hence
+ the name.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The variation in time of a Direction Cosine Matrix can be expressed as 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\mathbf{R}_{12}=-\begin{bmatrix}0 & -r & q\\
+r & 0 & -p\\
+-q & p & 0
+\end{bmatrix}\mathbf{R}_{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+however we must enforce orthogonality quite often, if we do not want numerical
+ errors to add up and distort also other measurement.
+ A simple, yet costly, procedure to enforce orthogonality can be 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{R}_{12}^{'}=\frac{3}{2}\mathbf{R}_{12}-\frac{1}{2}\mathbf{R}_{12}\mathbf{R}_{12}^{T}\mathbf{R}_{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\noindent
+Euler Angles
+\end_layout
+
+\begin_layout Standard
+\noindent
+Euler angles, in general, are the most natural parametrization of attitude,
+ since it is easier to assign them a physical and visible meaning.
+ Basically the three angles represent three consecutive rotations around
+ three axis.
+ Since the rotation are in sequence the second rotation is around an axis
+ that is not the axis of the initial reference frame but it is around an
+ intermediate axis.
+ The DCM can be expressed as a multiplication of three different DCM, each
+ one representing a rotation around one axis, where the first rotation is
+ on right.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{R}_{12}=\mathbf{R}_{1g}\mathbf{R}_{gi}\mathbf{R}_{i2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The DCM of a rotation around one axis can be
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{R}=\begin{bmatrix}1 & 0 & 0\\
+0 & \cos\vartheta & \sin\vartheta\\
+0 & -\sin\vartheta & \cos\vartheta
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The variation in time of such parameters is not trivial and depends on the
+ sequence of rotation.
+ Here we report the differential equation for the combination of rotations
+ 
+\begin_inset Formula $z-y-x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\varphi} & =\frac{r\cos\psi+q\sin\psi}{\cos\vartheta}\\
+\dot{\vartheta} & =q\cos\psi-r\sin\psi\\
+\dot{\psi} & =p+\left(q\sin\psi+r\cos\psi\right)\tan\vartheta
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+There is, however, a problem with Euler angles so that normal on-board computers
+ for attitude do not implement such parameters.
+ This problem, often called gymbal-lock, lies when one of the angles approach
+ a particular value and the derivative of one angles goes to infinity: there
+ are singularities.
+ In the example above we can see that if 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ reaches 90° 
+\begin_inset Formula $\dot{\varphi}\&\dot{\psi}\rightarrow\infty$
+\end_inset
+
+ and the solution diverges.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+If the motion is well confined it is possible to use Euler angles without
+ problems, but in other cases when the body can change significantly its
+ attitude the problem of singularities cannot be neglected.
+ As will be clearer in the following lessons, having to use trigonometric
+ functions on an on-board controller routine is always avoided if possible.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Quaternions
+\end_layout
+
+\begin_layout Standard
+\noindent
+Quaternions are the solution to singularities in attitude parametrization,
+ however they need 4 scalar components and quite a complex algebra behind.
+ We will not enter much in the detail of quaternion math, but will simply
+ address what is useful for us.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{q}=\begin{Bmatrix}x\sin\vartheta\\
+y\sin\vartheta\\
+z\sin\vartheta\\
+\cos\vartheta
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+ is the Euler angle
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+another kind of parametrization that involves the rotation of one single
+ angle around one single axis, however there is no rule for consecutive
+ rotation, hence useless for our approach.
+ 
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Formula $x,\, y,\, z$
+\end_inset
+
+ the components of the Euler axis.
+ They do represent a rotation from a reference frame to another reference
+ frame, using vectors with four components.
+ It is possible to trace back a quaternion into a DCM and rotate a 3D vector
+ in space.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+check the rotation matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{R}=\begin{bmatrix}q_{1}^{2}-q_{2}^{2}-q_{3}^{2}+q_{4}^{2} & 2\left(q_{1}q_{2}+q_{3}q_{4}\right) & 2\left(q_{1}q_{3}-q_{2}q_{4}\right)\\
+2\left(q_{1}q_{2}-q_{3}q_{4}\right) & -q_{1}^{2}+q_{2}^{2}-q_{3}^{2}+q_{4}^{2} & 2\left(q_{2}q_{3}+q_{1}q_{4}\right)\\
+2\left(q_{1}q_{3}+q_{2}q_{4}\right) & 2\left(q_{2}q_{3}-q_{1}q_{4}\right) & -q_{1}^{2}-q_{2}^{2}+q_{3}^{2}+q_{4}^{2}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The variation in time of a quaternion can be computed as 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\dot{\mathbf{q}}=\frac{1}{2}\Omega\mathbf{q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\Omega=\begin{bmatrix}0 & r & -q & p\\
+-r & 0 & p & q\\
+q & -p & 0 & r\\
+-p & -q & -r & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $p,\, q,\, r$
+\end_inset
+
+ are the the scalar components of the angular velocity vector.
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Linear Systems and State Space representation
+\end_layout
+
+\begin_layout Standard
+\noindent
+Every dynamical system can be represented using differential equation, however
+ in case of linear system there is a special representation of such equations
+ that can be used in a very powerful way.
+ Should be noticed that no real system is not even remotely linear, however
+ there are numerous cases when it is possible to approximate the system
+ representation and use a linear model.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+To understand the process let us take the angular momentum conservation,written
+ in body axis and under the hypothesis of constant mass and inertia.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{I}\frac{d}{dt}\omega=\omega\times\mathbf{I}\omega+\mathbf{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+now if we assume that the nominal angular velocity of the body is null the
+ non linear term 
+\begin_inset Formula $\omega\times\mathbf{I}\omega$
+\end_inset
+
+ is made by the product of two angular velocity components that should be
+ null.
+ Even if the velocity is not null we can at least assume that it will be
+ very small: the product of two small quantities is even smaller and thus
+ negligible.
+ Of course a proper procedure would require to compare the order of magnitude
+ of all the equation components.
+ If we neglect such term the equation becomes linear
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{I}\frac{d}{dt}\omega=\mathbf{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+however this is not enough and we need to reconstruct the attitude kinematics.
+ All the presented procedure for attitude propagation are non linear, however
+ we can make other assumptions and reduce the problem even more.
+ Let us represent the kinematics through Euler angles.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\varphi} & =\frac{r\cos\psi+q\sin\psi}{\cos\vartheta}\\
+\dot{\vartheta} & =q\cos\psi-r\sin\psi\\
+\dot{\psi} & =p+\left(q\sin\psi+r\cos\psi\right)\tan\vartheta
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Then let us assume that the angles describing the attitude should be small,
+ less than 20° for example, for all the motion that we are interested in.
+ We can make the model linear by series expansion.
+ To make it simple 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\sin x & \simeq x\\
+\cos x & \simeq1\\
+\tan x & \simeq x
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+therefore
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\varphi} & =r+q\psi\\
+\dot{\vartheta} & =q-r\psi\\
+\dot{\psi} & =p+\left(q\psi+r\right)\vartheta
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+now we assumed that both angular velocities and angles are small, therefore
+ the products such as 
+\begin_inset Formula $q\psi$
+\end_inset
+
+ are negligible.
+ The conclusion is 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\varphi} & =r\\
+\dot{\vartheta} & =q\\
+\dot{\psi} & =p
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+substituting in the previous equation we have 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+I_{x}\frac{d^{2}}{dt^{2}}\psi & =m_{x}\\
+I_{y}\frac{d^{2}}{dt^{2}}\vartheta & =m_{y}\\
+I_{z}\frac{d^{2}}{dt^{2}}\varphi & =m_{z}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+This second order system is now linear.
+ We can take a step further and re-arrange it in a matrix form 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{\psi}\\
+\dot{\vartheta}\\
+\dot{\varphi}\\
+\psi\\
+\vartheta\\
+\varphi
+\end{Bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{\psi}\\
+\dot{\vartheta}\\
+\dot{\varphi}\\
+\psi\\
+\vartheta\\
+\varphi
+\end{Bmatrix}+\begin{bmatrix}\nicefrac{1}{I_{x}} & 0 & 0\\
+0 & \nicefrac{1}{I_{y}} & 0\\
+0 & 0 & \nicefrac{1}{I_{z}}\\
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix}\begin{Bmatrix}m_{x}\\
+m_{y}\\
+m_{z}
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+in a more compact and general form we can write
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\dot{\mathbf{x}}=\mathbf{A}\mathbf{x}+\mathbf{B}\mathbf{u}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the future lessons this form will show you all its power by simplifying
+ the design of the whole GNC system.
+ The name of this representation is usually 
+\begin_inset Quotes eld
+\end_inset
+
+state space
+\begin_inset Quotes erd
+\end_inset
+
+ representation, where the state is the vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ that contains all the 
+\begin_inset Quotes eld
+\end_inset
+
+states
+\begin_inset Quotes erd
+\end_inset
+
+ of the dynamical system take in consideration.
+ The vector 
+\begin_inset Formula $\mathbf{u}$
+\end_inset
+
+ is usually linked to the external input of the system, meaning all the
+ factors that are not considered part of the system state.
+ In this category falls bot the control actions, controlled input that are
+ meant to produce a controlled evolution of the system, and external disturbance
+s.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ tells us what is the natural evolution of the system if no other input
+ is present.
+ The result is 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\dot{\mathbf{x}} & =\mathbf{A}\mathbf{x}\\
+\mathbf{x}\left(t=0\right) & =\mathbf{x}_{0}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where we have put in evidence the initial condition of the system.
+ In our case the form of matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ tell us that whichever the initial angular position (within our hypothesis
+ of small angles!) takes the body the attitude evolution in time does not
+ depend by it.
+ On the other hand if we have non null angular velocity we have that the
+ attitude angles change linearly in time with a fixed velocity equal to
+ the initial one.
+ Pay attention that this system with initial velocity non null, sooner or
+ later will go out the boundaries that we have imposed on the model and
+ therefore the linear model will not be representative of the real system
+ behavior.
+ This suggest us that such system with such hypothesis are meant to evolve
+ within some pre-fixed boundaries and that the control action is used to
+ enforce such boundaries.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The previous analysis can be made quite easily using matrix algebra: let
+ us try to compute the eigenvectors of matrix 
+\series bold
+
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+
+\series default
+.
+ It is easy to see that the system has 6 null eigenvalues and this means
+ that without an external control action the minimum disturbance could make
+ the whole system diverge.
+ Such analysis and much more will be explained later on.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Blimp model
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us take our blimp and write the equations of motion for each axis, simplify
+ them and obtain a linear system that describes the whole motion.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+First of all we must take into account all the forces and torques that are
+ applied to the vehicle:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+weight, pointing towards the ground;
+\end_layout
+
+\begin_layout Itemize
+\noindent
+lift, pointing skyward;
+\end_layout
+
+\begin_layout Itemize
+\noindent
+thrust, magnitude and direction given by the controller;
+\end_layout
+
+\begin_layout Itemize
+\noindent
+aerodynamic drag, pointing in the direction opposite to the velocity of
+ the blimp relative to the air.
+ 
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Vertical direction
+\end_layout
+
+\begin_layout Standard
+\noindent
+If the engines are switched off and the blimp is standing still, meaning
+ no drag, we have an equilibrium condition with the lift force equilibrating
+ the weight of the vehicle.
+ You can call the height achieved by the blimp as its equilibrium height:
+ without external action the system will tend to reach that altitude and
+ maintain it.
+ Please notice that the lift, in this case,is generated by the balloons,
+ not by an airfoil or a wing since they require a non null stream velocity
+ not compatible with a standing still blimp.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+mg=\overline{l}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\overline{l}$
+\end_inset
+
+ is the lift force at equilibrium condition.
+ Since the force depends on the external pressure a big change in altitude
+ can make this force change, however if we limit ourselves to a hovering
+ condition with small altitude variation we can assume that the lift force
+ is equal to the weight of the system.
+ This also implies almost no drag.
+ Now, let us add a component of the thrust 
+\begin_inset Formula $t_{z}$
+\end_inset
+
+ that is positive upwards,meaning that it produces a positive increment
+ of altitude considering a z-axis pointing to the zenith.
+ The first law of dynamics give us
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+m\dot{v_{z}} & =\overline{l}-mg+t_{z}\\
+\dot{v_{z}} & =\frac{\overline{l}-mg}{m}+\frac{t_{z}}{m}\\
+\ddot{z} & =\underbrace{\frac{\overline{l}-mg}{m}}_{0}+\frac{t_{z}}{m}\\
+\ddot{z} & =\frac{t_{z}}{m}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+in state space representation
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{z}\\
+z
+\end{Bmatrix}=\begin{bmatrix}0 & 0\\
+1 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{z}\\
+z
+\end{Bmatrix}+\begin{bmatrix}\frac{1}{m}\\
+0
+\end{bmatrix}t_{z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Translation
+\end_layout
+
+\begin_layout Standard
+\noindent
+now let us address the translation in the horizontal plane.
+ since the propeller are mounted such that the thrust is always in the vertical
+ plane we can assume that the lateral motion is null.
+ Let us address the motion along the x axis of the blimp, therefore in the
+ non-inertial system.
+ At first we assume that the body is not rolling, therefore we have 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+m\dot{v}_{x} & =t_{x}-d\\
+\dot{v}_{x} & =\frac{1}{m}\left(t_{x}-\frac{1}{2}\rho v_{x}^{2}SC_{D}\right)\\
+\ddot{x} & =\frac{1}{m}\left(t_{x}-\frac{1}{2}\rho SC_{D}\dot{x}^{2}\right)
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+assuming small variation of altitude such that 
+\begin_inset Formula $\rho$
+\end_inset
+
+ can be considered constant we have 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{x}\\
+x
+\end{Bmatrix}=\begin{bmatrix}0 & 0\\
+1 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{x}\\
+x
+\end{Bmatrix}+\begin{bmatrix}\frac{1}{m}\\
+0
+\end{bmatrix}t_{x}-\begin{bmatrix}\frac{\rho SC_{D}}{2m}\\
+0
+\end{bmatrix}\dot{x}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+now we can simplify the non-linear system in two different ways.
+ The most simple requires the direct elimination of the drag since the velocity
+ of the blimp can be considered small.
+ If we want to take into account the little contribution of the drag we
+ can assume that the blimp is moving at constant speed in the nominal configurat
+ion and have the drag term linearized.
+ In the latter case we have 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{x}\\
+x
+\end{Bmatrix}=\begin{bmatrix}-\frac{\rho SC_{D}\dot{\overline{x}}}{m} & 0\\
+1 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{x}\\
+x
+\end{Bmatrix}+\begin{bmatrix}\frac{1}{m}\\
+0
+\end{bmatrix}t_{x}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+It is easy to find out that the eigenvalues of the matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ in this case are 0 and 
+\begin_inset Formula $-\frac{\rho SC_{D}}{m}$
+\end_inset
+
+.
+ This means that the drag has a stabilizing factor, in fact if the velocity
+ increases from the nominal condition the drag will increase and try to
+ reduce it.
+ Remember that this assumptions valid only in a strictly limited case.
+ 
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Rotation
+\end_layout
+
+\begin_layout Standard
+\noindent
+If the engines are off the blimp should not rotate at all, if the weights
+ on it are well balanced.
+ Moreover we are not interested in having the blimp pitch or roll, therefore
+ there are no actuators that will try to modify such rotations and the simplest
+ thing to do is to assure that the system is stable against perturbations
+ torques applied on such axis.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+What we do want to obtain, on the other hand, is a controlled rotation on
+ the yaw axis: if the blimp can only go forward or backward the only way
+ to make it go left or right is to rotate it.
+ The only force that can produce a torque is the propeller torque and the
+ corresponding drag.
+ This kind of drag is not easy to model and it is also very low if the maneuver
+ is slow,therefore we can neglect it and write 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+I_{y}\dot{q}=m_{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the non linear term is null since the other two angular velocities
+ are null.
+ Of course in a stability analysis on the other two axis we should take
+ into account a non zero yaw velocity.
+ If we limit the yaw angle to be under 20 degrees we can simply write 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\ddot{\vartheta}=\frac{m_{y}}{I_{y}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+in the state space representation
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}=\begin{bmatrix}0 & 0\\
+1 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}+\begin{bmatrix}\frac{1}{I_{y}}\\
+0
+\end{bmatrix}m_{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us take a look back at the Euler angles variation in time assuming,
+ small 
+\begin_inset Formula $\psi$
+\end_inset
+
+ and not small 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\varphi} & =\frac{r+q\psi}{\cos\vartheta}\\
+\dot{\vartheta} & =q\\
+\dot{\psi} & =\left(q\psi+r\right)\tan\vartheta
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+even if we assume 
+\begin_inset Formula $r=0$
+\end_inset
+
+ there are troubles.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\varphi} & =\frac{q}{\cos\vartheta}\psi\\
+\dot{\vartheta} & =q\\
+\dot{\psi} & =q\psi\tan\vartheta
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+let us think to have 
+\begin_inset Formula $\vartheta=45\text{°}$
+\end_inset
+
+, the system will be
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\varphi} & =\frac{2q}{\sqrt{2}}\psi\\
+\dot{\vartheta} & =q\\
+\dot{\psi} & =q\psi
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+This suggest that a small pitching perturbation on 
+\begin_inset Formula $\psi$
+\end_inset
+
+ coupled with a yaw angular velocity can produce a diverging solution for
+ the other two angles, meaning that the attitude could be lost after just
+ one turn.
+ In order to reduce this effect the maneuver should be slow, therefore if
+ we want to have a big turn we should make it slow.
+ 
+\end_layout
+
+\begin_layout Subsection
+\noindent
+Complete model for level flight
+\end_layout
+
+\begin_layout Standard
+\noindent
+Now let us write the whole state space representation for the vehicle
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{z}\\
+z\\
+\dot{x}\\
+x\\
+\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & -\frac{\rho SC_{D}\dot{\overline{x}}}{m} & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{z}\\
+z\\
+\dot{x}\\
+x\\
+\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}+\begin{bmatrix}\frac{1}{m} & 0 & 0\\
+0 & 0 & 0\\
+0 & \frac{1}{m} & 0\\
+0 & 0 & 0\\
+0 & 0 & \frac{1}{I_{y}}\\
+0 & 0 & 0
+\end{bmatrix}\begin{Bmatrix}t_{z}\\
+t_{x}\\
+m_{y}
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+however we have not addressed yet the control actions 
+\begin_inset Formula $t_{x},\, t_{z}$
+\end_inset
+
+ and 
+\begin_inset Formula $m_{y}$
+\end_inset
+
+.
+ On the vehicle there are two propellers that produce a varying thrust,
+ not dependent in magnitude one from the other, therefore we can say that
+ we have 
+\begin_inset Formula $t_{sx}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{dx}$
+\end_inset
+
+.
+ The torque 
+\begin_inset Formula $m_{y}$
+\end_inset
+
+ is produced by the difference of these two thrust if we consider both of
+ them at a distance 
+\begin_inset Formula $b$
+\end_inset
+
+ from the center of mass, moreover the propellers are mounted on a bar that
+ can rotate of an angle 
+\begin_inset Formula $\eta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Therefore the thrust components are 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{Bmatrix}t_{z}\\
+t_{x}\\
+m_{y}
+\end{Bmatrix}=\begin{bmatrix}\sin\eta & \sin\eta\\
+\cos\eta & \cos\eta\\
+b & -b
+\end{bmatrix}\begin{Bmatrix}t_{sx}\\
+t_{dx}
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this case the system is no more linear or time invariant.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{z}\\
+z\\
+\dot{x}\\
+x\\
+\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & -\frac{\rho SC_{D}\dot{\overline{x}}}{m} & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{z}\\
+z\\
+\dot{x}\\
+x\\
+\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}+\begin{bmatrix}\frac{\sin\eta}{m} & \frac{\sin\eta}{m}\\
+0 & 0\\
+\frac{\cos\eta}{m} & \frac{\cos\eta}{m}\\
+0 & 0\\
+\frac{b}{I_{y}} & -\frac{b}{I_{y}}\\
+0 & 0
+\end{bmatrix}\begin{Bmatrix}t_{sx}\\
+t_{dx}
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+However we have more than one control variable, therefore we can also decide
+ to have 
+\begin_inset Formula $t_{sx}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{dx}$
+\end_inset
+
+ not independent.
+ If we enforce that the thrusting produced by the propellers is constant
+ we have an interesting development 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\overline{t} & =t_{sx}+t_{dx}\\
+t_{z} & =\overline{t}\sin\eta\simeq\overline{t}\eta\\
+t_{x} & =\overline{t}\cos\eta\simeq\overline{t}\\
+m_{y} & =2t_{sx}-\overline{t}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+therefore
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{d}{dt}\begin{Bmatrix}\dot{z}\\
+z\\
+\dot{x}\\
+x\\
+\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & -\frac{\rho SC_{D}\dot{\overline{x}}}{m} & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}\begin{Bmatrix}\dot{z}\\
+z\\
+\dot{x}\\
+x\\
+\dot{\vartheta}\\
+\vartheta
+\end{Bmatrix}+\begin{bmatrix}0 & \frac{\overline{t}}{m}\\
+0 & 0\\
+0 & 0\\
+0 & 0\\
+\frac{2b}{I_{y}} & 0\\
+0 & 0
+\end{bmatrix}\begin{Bmatrix}t_{sx}\\
+\eta
+\end{Bmatrix}+\begin{Bmatrix}0\\
+0\\
+\frac{\overline{t}}{m}\\
+0\\
+-\frac{b\overline{t}}{I_{y}}\\
+0
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+which is a linear biased system.
+ If we want to have the blimp at a fixed altitude and moving at constant
+ speed we can make use of the state space representation in this powerful
+ way:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\mathbf{e} & =\begin{Bmatrix}\dot{z}-\dot{\overline{z}} & z-\overline{z} & \dot{x}-\dot{\overline{x}} & x-\overline{x}\end{Bmatrix}\\
+\mathbf{e} & =\begin{Bmatrix}e_{v_{z}} & e_{z} & e_{v_{x}} & e_{x}\end{Bmatrix}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where the
+\begin_inset Formula $\overline{}$
+\end_inset
+
+ indicates the nominal condition.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{Bmatrix}e_{v_{z}}\\
+e_{z}\\
+e_{v_{x}}\\
+e_{x}
+\end{Bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0\\
+0 & 0 & -\frac{\rho SC_{D}\dot{\overline{x}}}{m} & 0\\
+0 & 0 & 1 & 0
+\end{bmatrix}\begin{Bmatrix}e_{v_{z}}\\
+e_{z}\\
+e_{v_{x}}\\
+e_{x}
+\end{Bmatrix}+\begin{bmatrix}0 & \frac{\overline{t}}{m}\\
+0 & 0\\
+0 & 0\\
+0 & 0
+\end{bmatrix}\begin{Bmatrix}t_{sx}\\
+\eta
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this case we see that just 
+\begin_inset Formula $\eta$
+\end_inset
+
+ can change the system behavior and it cannot influence the translation
+ dynamics.
+ This is perfectly normal for the linearized system: having a constant thrusting
+ force means that the system can achieve and maintain equilibrium on its
+ own.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+m\ddot{x} & =\overline{t}-\frac{1}{2}\rho SC_{D}\overline{v}_{x}^{2}\\
+0 & =\overline{t}-\frac{1}{2}\rho SC_{D}\overline{v}_{x}^{2}\\
+\overline{v}_{x}^{2} & =\frac{\overline{t}}{\frac{1}{2}\rho SC_{D}}\\
+\overline{v}_{x} & =\sqrt{\frac{\overline{t}}{\frac{1}{2}\rho SC_{D}}}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+therefore
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{Bmatrix}e_{v_{x}}\\
+e_{x}
+\end{Bmatrix}=\begin{bmatrix}-\sqrt{\frac{\rho SC_{D}2\overline{t}}{m^{2}}} & 0\\
+1 & 0
+\end{bmatrix}\begin{Bmatrix}e_{v_{x}}\\
+e_{x}
+\end{Bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+since the sign of the stabilizing term has not changed we can deduce that
+ the system has an eigenvalue equal to 
+\begin_inset Formula $-\sqrt{\frac{\rho SC_{D}2\overline{t}}{m^{2}}}$
+\end_inset
+
+ that is stabilizing the blimp translational velocity.
+ Of course the other eigenvalue is zero, that suggest the continuous change
+ of position.
+ This is the obvious conclusion of the model where we set the velocity to
+ be constant and non-zero.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+If we want to have the blimp fixed in a position we should make other assumption
+s.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\noindent
+Appendix
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Function name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Notes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+angle2dcm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pass from Euler angles to DCM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+quat2dcm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pass from quaternion to DCM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+scalar is first
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dcm2quat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pass from DCM to quaternion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+scalar is first
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dcm2angle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pass from DCM to Euler angles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+angle2quat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pass from Euler angles to quaternion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+scalar is first
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+quat2angle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pass from quaternion to Euler angles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+scalar is first
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+atmoscoesa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1976 COESA model for atmosphere
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ode45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ODE solver function
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+needs 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ode113
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ODE solver function
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+needs 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Type 
+\begin_inset Quotes eld
+\end_inset
+
+help namefunction
+\begin_inset Quotes erd
+\end_inset
+
+ to have the description of input/output and options of the selected function.
+ 
+\end_layout
+
+\end_body
+\end_document

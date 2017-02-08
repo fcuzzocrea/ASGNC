@@ -1,0 +1,291 @@
+%% LyX 2.0.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[twoside,english]{report}
+\usepackage[sc]{mathpazo}
+\usepackage{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,lmargin=4cm,rmargin=2cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\input{Settings.tex}
+
+\makeatother
+
+\begin{document}
+\input{Titlepage.tex}
+
+\input{Titleback.tex}
+
+\pagenumbering{roman}
+
+\tableofcontents{}
+
+\clearpage{}
+
+\pagenumbering{arabic}
+
+\setcounter{page}{1}
+
+
+\chapter{Introduction}
+
+
+\section{What is Arduino ?}
+
+Arduino is a single-board microcontroller inteded to make the application
+of interactive objects or enviroment more accessible. 
+
+So Arduino can be used for fast prototiping, or for building small
+robots (or an airship, like in our case).
+
+{*}Inserire immagine arduino{*}.
+
+Pre-programmed into the on-board microcontroller chip is a boot loader
+that allows uploading programs into the microcontroller memory without
+needing a chip (device) programmer, simply by using the USB port.
+
+Arduino is provided with input/output functionality so the board can
+send/receive data to the external sensors.
+
+The behaviour of the board is managed by microcontroller based on
+the decisions implemented on the program that's running on the board.
+
+The board may also interact with the external enviroment by using
+actuator driven by the program trought the output channels.
+
+{*}inserire immagine arduino collegato a qualche cosa che faccia molto
+figo{*}
+
+
+\section{What is Simulink ?}
+
+Simulink is a data flow graphical programming language tool for modeling,
+simulating and analyzing multidomain dynamic systestm.
+
+The interface of Simulink consist in a graphical block diagramming
+tool an customizable set of block libraries.
+
+{*}immagine{*}
+
+Plus, Simulink offer also integration with the rest of Matlab enviroment
+an can either drive Matlab or can be called by a Matlab script.
+
+Simulink can be enhanced with different kind of libraries, so we can
+simulate the behaviour of a large variety of system and plus, Simulink
+can be used to run our simulation on a targetted hardware board, in
+this case for example we are going to use an Arduino Uno, but also
+STM32 can be used (aggiungerne altre).
+
+Penso di dover scrivere altro
+
+
+\section{Downloading and installink Matlab and the Simulink libraries}
+
+In order to use Simulink and the Arduino support package we first
+need to install a reguar copy of MATLAB.
+
+A free licence is available for all the students of Politecnico di
+Milano.
+
+In order to download it we first need to go to the following page
+: 
+
+http://www.software.polimi.it/software-download/studenti/matlab
+
+Then we should click on ``attiva account''
+
+{*}piazzare screen{*}
+
+And follow the instruction on the monitor.
+
+Once matlab and Simulink are installed, we should install the Arduino
+Support Package for Simulink, so let's click on
+
+inserire vari screen del procedimento
+
+{*}pensavo di inserire altra roba di elettronica, ma devo chiedere
+a mattia{*}
+
+
+\section{A first simple example}
+
+So let's start to play together with the Arduino Uno board and Simulink.
+
+In this first example you will learn how to interface Arduino with
+Simulink, so we can generate a firmware compatible with the board
+starting from our model built and tested on Simulink.
+
+First open up Simulink, simply by typing simulink from the MATLAB
+command prompt :
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[scale=0.3]{\string"gfx/Start Simulink\string".jpg}
+\par\end{centering}
+
+\caption{Start Simulink}
+\end{figure}
+
+
+\newpage{}
+
+So the Simulink library browser will show up : 
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[scale=0.3]{\string"gfx/Simulink Library Browser\string".jpg}
+\par\end{centering}
+
+\caption{Simulink Library Browser}
+\end{figure}
+
+
+For this first simple example we are going to use blocks from the
+Simulink blockset and from the Simulink Support Package for Arduino
+Hardware blockset.
+
+Let's start a new blank project by clicking on File > New > Model.
+
+We want to control the digital output of the Arduino Board in order
+to made a led blink at specified time interval, so first we need to
+select a Pulse Generator, simply by drag and dropping the Pulse Generator
+block in the model window.
+
+We need the Pulse Generator in order to generate the signal that we
+will sent to the digital output of the Arduino Uno board : 
+
+\begin{figure}[H]
+\noindent \centering{}\includegraphics[scale=0.3]{\string"gfx/Pulse Generator\string".jpg}\caption{Pulse Generator}
+\end{figure}
+
+
+Then we need to connect the pulse generator to the digital outpu of
+the Arduino Uno board. So let's browse the Simulink Support Package
+for Arduino Hardware blockset and select the digital output block.
+
+Drag and drop the block to the model and connect the pulse generator
+to the block :
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.3]{\string"gfx/Digital Output\string".jpg}
+\par\end{centering}
+
+\caption{Arduino Digital Output Block}
+\end{figure}
+
+
+In order to made our model work, we need to set the corret pulse type
+of our pulse generator, so as our signal should control a digital
+output, we need to set the ``sample based'' pulse type and set the
+sample time to 0.1 (or wichever value you want to set) :
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[scale=0.3]{\string"gfx/Pulse Generator Options\string".jpg}
+\par\end{centering}
+
+\caption{Sample Generator Options}
+\end{figure}
+
+
+Now we are ready to test our model consistency with Simulink. Let's
+connect a scope between the Pulse Generator block and the digital
+output block, and next cick Run. 
+
+Double clicking on the scope will show us the results of our simulation
+: 
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[scale=0.3]{gfx/Scope}
+\par\end{centering}
+
+\caption{Simulation Results}
+\end{figure}
+
+
+Now we are ready to build the real circuit and to download the firmware
+to the Arduino Uno board.
+
+In the figure below is rapresented the wiring
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[scale=0.2]{\string"gfx/Primo esempio_bb\string".jpg}
+\par\end{centering}
+
+\caption{Wiring}
+\end{figure}
+
+
+So, after the wiring is done, we need to connect the Arduino Uno board
+to our PC trought the USB cable.
+
+On Simulink let's click on Tools > Run on Target Hardware > Prepare
+to Run. 
+
+A window will pop-up, we need to chose the Arduino Uno target hardware,
+then click Apply. The Simulink defaults settings are perfectly suitable
+for our needs
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\includegraphics[scale=0.3]{\string"gfx/Target Hardware\string".jpg}
+\par\end{centering}
+
+\caption{Target Hardware}
+\end{figure}
+
+
+Now click again on Tools > Run on Target Hardware > Run. 
+
+Simulink will automatically generate the necessay C code based on
+our model, and will flash the firmware on the board.
+
+Take a look to the led, should blink.
+
+{*}inserire immagine del led che blinka{*}
+
+
+\section{Traffic Light Control}
+
+In this example we will control three led in order to modelize a traffic
+light flow. For this example Microsoft Visual C++ runtimes libraries
+will be required
+
+
+\section{Servo Control}
+
+In this example we will learn how to use the Simulink Servo Control
+blockset.
+
+First thing, we need to 
+
+\newpage{}AAAAAaaaaaaakdponfoeno fpjr rj
+
+\newpage{}JKJNDJKBDKJNDJKB
+
+\appendix
+
+\chapter{Allora come va}
+
+\newpage{}
+
+Sksnbsubsuifbu
+\end{document}

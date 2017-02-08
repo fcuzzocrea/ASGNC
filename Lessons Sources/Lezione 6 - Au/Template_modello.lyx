@@ -1,0 +1,1939 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\input{Settings.tex}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans helvet
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc true
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement bph
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 4cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titlepage.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titleback.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Principles of Navigation
+\end_layout
+
+\begin_layout Standard
+\noindent
+Navigation is, in general, a simple concept and is easily understood by
+ everyone, however things are not so easy as they seems.
+ To navigate means to know were you are and where you are going and is no
+ simple task.
+ First of all to determine the state (position, velocity, attitude) of a
+ vehicle some measurement are necessary: there is no navigation system that
+ does not uses sensors.
+ Sensors measurement are affected by various kind of noises and often they
+ measures something different from the state and thus a proper elaboration
+ of the data is to be used.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Determining attitude
+\end_layout
+
+\begin_layout Standard
+\noindent
+To determine the orientation of a body usually requires to determine the
+ position vector of different known location.
+ The good old compass gives the direction of the magnetic pole and that
+ gives, with some errors due to misalignment of magnetic poles and geographic
+ poles, the north direction.
+ If the body is not moving a simple pendulum can give the zenith direction.
+ Modern sensors are used in a similar way, but of course they are more complex.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+One thing that should be understood as early as possible is that with just
+ one vector measurement is not possible to determine the full orientation
+ of a body.
+ Some restriction given by the dynamics can be applied and reduce the uncertaint
+y or simply discarding the idea of reconstructing the full orientation of
+ the body and use just one single vector measurement.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+There are various kind of methods to determine attitude using vector measurement
+, some use statistics, other shear computational power, and so on.
+ In general is preferred to have more than three measures in order to reduce
+ the effects of instrument noise, however this often requires the computation
+ of a pseudo-inverse
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+If a matrix is not square can be 
+\begin_inset Quotes eld
+\end_inset
+
+inverted
+\begin_inset Quotes erd
+\end_inset
+
+ using one between two formulas and the results is the inverse matrix that
+ minimized the squared errors of the fitting.
+\end_layout
+
+\end_inset
+
+.
+ Another preference is to have the measured vectors as orthogonal as possible
+ for the sake of obtaining a good result.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Then another issue is to determine wich kind of parameters to use for the
+ attitude determination: direction cosines, Euler angles, quaternions, etc.
+ Some techniques are better with one parametrization, others with another.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Determining position
+\end_layout
+
+\begin_layout Standard
+\noindent
+Determining position is even more challenging that determining the attitude
+ of the body.
+ Again one of the most used methods is to determine the distance from known
+ locations and similarly determine the actual position.
+ This can be achieved using ground stations, as often used in the aeronautics,
+ or satellites as for GPS.
+ This kind of determination can be precise but needs the installation of
+ other systems, therefore is not always possible to exploit it.
+ A lot of research is carried out to determine position in GPS-denied environmen
+t.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Position, as attitude, can be determined by integration of velocities or
+ accelerations, however the noisier the measures the worst the outcome is.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+One important thing in position determination is to set a reference frame
+ to use for the measurement, otherwise no meaningful position can be determined.
+ A GPS gives the altitude, latitude and longitude of the body w.r.t.
+ a reference frame fixed with the planet, therefore in many cases a transformati
+on of coordinates has to be done.
+ 
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Random Process (basics)
+\end_layout
+
+\begin_layout Standard
+\noindent
+The first thing to mention regarding random processes is to address what
+ is deterministic and what is not.
+ A deterministic process that is measured in this instant can be determined
+ in a future time instant if previous measurement are known.
+ On the other hand a random process cannot be determined even if all measurement
+s are taken from the dawn of time.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+cit xD
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Even if a process is non deterministic it is still possible to extract useful
+ information from it.
+ Let us take an ensemble of 
+\begin_inset Formula $N$
+\end_inset
+
+ samples of a random process, we can define the mean
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Mean value, the most probable value a signal can take
+\end_layout
+
+\end_inset
+
+ and the variance
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Statistical measure of data dispersion, it is non-negative.
+\end_layout
+
+\end_inset
+
+ as follows
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\mu_{x} & =\sum_{i=1}^{N}x_{i}\\
+V_{x}=\sigma_{x}^{2} & =\frac{1}{N}\sum_{i=1}^{N}\left[x_{i}-\mu_{x}\right]^{2}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+If we think about a signal that is continuous in time, we must take another
+ step and consider the time dependencies
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\mu_{x} & =\lim_{T\rightarrow\infty}\left[\frac{1}{T}\intop_{t'-T}^{t'}x\left(\tau\right)d\tau\right]\\
+V_{x}=\sigma_{x}^{2} & =\lim_{T\rightarrow\infty}\left[\frac{1}{T}\intop_{t'-T}^{t'}\left[x\left(\tau\right)-\mu_{x}\right]^{2}d\tau\right]
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+however this implies that all measurements from the beginning must be known.
+ This is not the case in all real applications, therefore we can define
+ estimations of the mean and variance as 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\hat{\mu}_{x} & =\frac{1}{T}\intop_{t'-T}^{t'}x\left(\tau\right)d\tau\\
+\hat{V}_{x}=\hat{\sigma}_{x}^{2} & =\frac{1}{T}\intop_{t'-T}^{t'}\left[x\left(\tau\right)-\hat{\mu}_{x}\right]^{2}d\tau
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+that represent the average and variance taken on a finite time window of
+ length 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Another useful quantity is the Probability Density Function 
+\begin_inset Formula $p_{x}\left(\alpha\right)$
+\end_inset
+
+ that represent the probability that 
+\begin_inset Formula $x$
+\end_inset
+
+ lies in the interval 
+\begin_inset Formula $\alpha\leq x\leq\alpha+d\alpha$
+\end_inset
+
+.
+ It can be seen as a statistical descriptor of the wave form of 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+.
+ The PDF can be used to determine other useful parameters and insights,
+ however this is not the scope of the course.
+ We will concentrate on the implication the knowledge of the PDF can provide
+ us.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+An operator that will be useful later on is the Expected Value 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+E\left[x_{k}\left(t_{1}\right)\right]=\lim_{n_{s}\rightarrow\infty}\left[\frac{1}{n_{s}}\sum_{k=1}^{n_{s}}x_{k}\left(t_{1}\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+that, being a limit, can only be estimated.
+ If the PDF of 
+\begin_inset Formula $x_{k}\left(t_{1}\right)$
+\end_inset
+
+ is known it is possible to determine analytically the expected value of
+ 
+\begin_inset Formula $x_{k}\left(t_{1}\right)$
+\end_inset
+
+.
+ The PDF can be divided into three categories regarding the way they are
+ determined:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+empirical estimates without theoretical basis,
+\end_layout
+
+\begin_layout Itemize
+\noindent
+rigorous analytical derivation from a physical model,
+\end_layout
+
+\begin_layout Itemize
+\noindent
+hypothetical functions that seems close to reality.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The expectation is equivalent to the first moment of 
+\begin_inset Formula $p_{x_{t_{1}}}$
+\end_inset
+
+ with 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+E\left[x_{t_{1}}\right]=\intop_{-\infty}^{+\infty}\alpha p_{x_{t_{1}}}\left(\alpha\right)d\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The expected value has different properties depending on the signal it analyze.
+ The expected value is a linear operator, in fact 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+E\left[x\right] & =\mu_{x}\\
+E\left[x+y\right] & =\mu_{x}+\mu_{y}\\
+E\left[ax\right] & =a\mu_{x},\qquad a\exists\mathbb{R}\\
+E\left[\left(x+y\right)^{2}\right] & =E\left[x^{2}\right]+2E\left[xy\right]+E\left[y^{2}\right]
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Given two signals 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ if we have 
+\begin_inset Formula $E\left[xy\right]=0$
+\end_inset
+
+ we have that the two processes are orthogonal.
+ If these process are independent it is sufficient for 
+\begin_inset Formula $\mu_{x}$
+\end_inset
+
+ or 
+\begin_inset Formula $\mu_{y}$
+\end_inset
+
+ to be zero.
+ Orthogonality do not implies independence.
+ Moreover, if the processes are orthogonal we have 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+E\left[\left(x+y\right)^{2}\right]=E\left[x^{2}\right]+E\left[y^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Lynear Systems : Observer
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us take a linear MIMO system that represent the behavior of a real system
+ as follows
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\mathbf{x}} & =\mathbf{A}\mathbf{x}+\mathbf{B}\mathbf{u}\\
+\mathbf{y} & =\mathbf{C}\mathbf{x}+\mathbf{D}\mathbf{u}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where we have multiple measures 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+.
+ What we want to build is a linear system that estimates the state 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ using the measures 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+: this is the so called 
+\begin_inset Quotes eld
+\end_inset
+
+Observer
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The observer has to be a dynamical system, otherwise it could not follow
+ the evolution of the system state through time.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Observability
+\end_layout
+
+\begin_layout Standard
+\noindent
+The first thing to do is to answer the question: is the system is observable?
+ This means that we must know if the measures that we are taking are enough
+ to estimate the whole state.
+ The classical method is to determine the rank of the observability matrix
+ defined as follows:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{O}_{m\cdot n\times n}=\begin{bmatrix}\mathbf{C}\\
+\mathbf{C}\mathbf{A}\\
+\mathbf{C}\mathbf{A}^{2}\\
+\vdots\\
+\mathbf{C}\mathbf{A}^{n-1}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The observability matrix has 
+\begin_inset Formula $m\cdot n$
+\end_inset
+
+ rows where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of states and 
+\begin_inset Formula $m$
+\end_inset
+
+ is the number of measures.
+ The maximum rank that this matrix can assume is 
+\begin_inset Formula $n$
+\end_inset
+
+, therefore if the rank is equal to the number of states the whole system
+ is observable, otherwise we cannot estimate the whole state from such measures.
+ This is a quick method to understand if the equipment we have is enough
+ or we must add other sensors.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Observer derivation
+\end_layout
+
+\begin_layout Standard
+\noindent
+The observer is a linear system such as 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\hat{\dot{\mathbf{x}}}=\hat{\mathbf{A}}\hat{\mathbf{x}}+\hat{\mathbf{B}}\mathbf{u}+\mathbf{L}\mathbf{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+we define the error as 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{e}=\mathbf{x}-\hat{\mathbf{x}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+and by subtraction we get the error evolution in time
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\dot{\mathbf{x}}-\hat{\dot{\mathbf{x}}} & =\mathbf{A}\mathbf{x}-\hat{\mathbf{A}}\hat{\mathbf{x}}+\mathbf{B}\mathbf{u}-\hat{\mathbf{B}}\mathbf{u}-\mathbf{L}\mathbf{y}\\
+\dot{\mathbf{e}} & =\mathbf{A}\mathbf{x}-\hat{\mathbf{A}}\left(\mathbf{x}-\mathbf{e}\right)+\mathbf{B}\mathbf{u}-\hat{\mathbf{B}}\mathbf{u}-\mathbf{L}\mathbf{C}\mathbf{x}\\
+\dot{\mathbf{e}} & =\hat{\mathbf{A}}\mathbf{e}+\left(\mathbf{A}-\hat{\mathbf{A}}-\mathbf{L}\mathbf{C}\right)\mathbf{x}+\left(\mathbf{B}-\hat{\mathbf{B}}\right)\mathbf{u}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Again we have a linear system that describe the evolution in time of the
+ state determination error.
+ If this system is stable we can affirm that, under the linearity assumption,
+ the error does not increase over time.
+ This case is, however, slightly more complex than usual.
+ As we can see the error evolution depends also on external factors.
+ We do not want to have it dependent on the state or control values,therefore
+ we impose the following constraints
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\mathbf{0}= & \mathbf{A}-\hat{\mathbf{A}}-\mathbf{L}\mathbf{C}\\
+\mathbf{0}= & \mathbf{B}-\hat{\mathbf{B}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+This means that the magnitude of the state or of the control action will
+ not affect the error evolution in time.
+ This is done to prevent error enhancement.
+ The result give us the values of the observer matrices 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\hat{\mathbf{A}}= & \mathbf{A}-\mathbf{L}\mathbf{C}\\
+\hat{\mathbf{B}}= & \mathbf{B}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+This shows us the design variable that we can shape accordingly to our needs:
+ the observer gain matrix 
+\begin_inset Formula $\mathbf{L}$
+\end_inset
+
+.
+ We can choose 
+\begin_inset Formula $\mathbf{L}$
+\end_inset
+
+ such that the dynamics of the error is pre-determined.
+ In fact 
+\begin_inset Formula $\mathbf{L}$
+\end_inset
+
+ can shift the eigenvalue of 
+\begin_inset Formula $\hat{\mathbf{A}}$
+\end_inset
+
+ to have all negative real part, making the error dynamics stable and confined.
+ This technique is often called pole placement method.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Kalman Filter
+\end_layout
+
+\begin_layout Standard
+\noindent
+As we have seen before no real process is deterministic, therefore we usually
+ have to cope with a system like this one 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\mathbf{x}} & =\mathbf{A}\mathbf{x}+\mathbf{B}\mathbf{u}+\mathbf{F}\mathbf{n}\\
+\mathbf{y} & =\mathbf{C}\mathbf{x}+\mathbf{D}\mathbf{u}+\mathbf{v}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{n}$
+\end_inset
+
+ is the process noise and 
+\begin_inset Formula $\mathbf{v}$
+\end_inset
+
+ the measurement noise.
+ These noises are assumed to be white noise with zero mean and a Gaussian
+ distribution.
+ We can define the covariance of these noises as 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\mathbf{Q} & =E\left[\mathbf{n}\mathbf{n}^{T}\right]\\
+\mathbf{R} & =E\left[\mathbf{v}\mathbf{v}^{T}\right]
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+the goal is to find an observer that optimally weights the measure and the
+ model uncertainties and produce the best estimate of the state.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\hat{\dot{\mathbf{x}}} & =\left(\mathbf{A}-\mathbf{L}\mathbf{C}\right)\hat{\mathbf{x}}+\mathbf{B}\mathbf{u}+\mathbf{L}\mathbf{v}\\
+\dot{\mathbf{e}} & =\left(\mathbf{A}-\mathbf{L}\mathbf{C}\right)\mathbf{e}+\mathbf{F}\mathbf{n}+\mathbf{L}\mathbf{v}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+To do so we use the optimal control theory and simply minimize the quadratic
+ error of the estimate.
+ In practice what we need is to have:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+a linear model of the system
+\end_layout
+
+\begin_layout Itemize
+\noindent
+the noises covariance
+\end_layout
+
+\begin_layout Itemize
+\noindent
+an initial state estimate error covariance 
+\begin_inset Formula $\mathbf{P}_{0}$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Notice that all covariance must be symmetric and positive definite
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+We can determine the evolution in time of the state error covariance 
+\begin_inset Formula $\mathbf{P}$
+\end_inset
+
+ via Riccati differential equation, however if we assume that the system
+ has passed its transitory region and it is stationary, we can obtain an
+ algebraic solution.
+ The derivation of all these results is skipped for the sake of brevity
+ and since this is not the goal of the course.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{flalign*}
+\mathbf{L} & =\mathbf{P}_{\infty}\mathbf{C}^{T}\mathbf{R}^{-1}\\
+\mathbf{P}_{\infty}\left(\mathbf{A}-\mathbf{L}\mathbf{C}\right)^{T}+\left(\mathbf{A}-\mathbf{L}\mathbf{C}\right)\mathbf{P}_{\infty}+\mathbf{F}\mathbf{Q}\mathbf{F}^{T}+\mathbf{L}^{T}\mathbf{R}\mathbf{L} & =\mathbf{0}\\
+\mathbf{P}_{\infty}\mathbf{A}^{T}+\mathbf{A}\mathbf{P}_{\infty}-2\mathbf{P}_{\infty}\mathbf{C}^{T}\mathbf{R}^{-T}\mathbf{C}\mathbf{P}_{\infty}+\mathbf{F}\mathbf{Q}\mathbf{F}^{T}+\mathbf{R}^{-T}\mathbf{C}\mathbf{P}_{\infty}\mathbf{R}\mathbf{P}_{\infty}\mathbf{C}^{T}\mathbf{R}^{-1} & =\mathbf{0}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+These are the expressions that gives the so called Linear constant Kalman
+ Filter.
+ When dealing with such family of filters we will use 
+\begin_inset Formula $\mathbf{K}$
+\end_inset
+
+ instead of 
+\begin_inset Formula $\mathbf{L}$
+\end_inset
+
+ to address the observer problem.
+ Kalman filtering is a major subject in signal analysis and also in navigation
+ problems.
+ 
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Kalman Filtering
+\end_layout
+
+\begin_layout Standard
+\noindent
+Kalman filtering has been widely used all around the world in the last decades
+ and it is a method well studied in many fields for many different applications.
+ It can be adapted to many problems and can assume many shapes: the number
+ of KF variant is enormous.
+ We will briefly explain some of the most common and useful applications.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Recursive Kalman Filter
+\end_layout
+
+\begin_layout Standard
+\noindent
+We have derived before the equations of the constant Kalman gain 
+\begin_inset Formula $\mathbf{K}$
+\end_inset
+
+ using the stationary Riccati equation, however there is a simple procedure
+ that can be used in case of time dependent systems.
+ In the Riccati equation the solution depends on 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+, if they change in time the solution is not optimal anymore and not correlated
+ to the problem.
+ Therefore there is a way to solve iteratively the Riccati equation and
+ address the problem of such quantities changing in time.
+ The procedure is the following:
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Predict the state 
+\begin_inset Formula $\mathbf{x}_{k|k-1}$
+\end_inset
+
+ at the following step using the previous known state estimation.
+ This step can also be solved using a non linear estimation of the state,
+ if this produce better results.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Predict the measurement 
+\begin_inset Formula $\tilde{\mathbf{y}}_{k}$
+\end_inset
+
+ given the measurement model of the system.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Predict the state error covariance 
+\begin_inset Formula $\mathbf{P}$
+\end_inset
+
+ using the following simplified Riccati equation, the state matrix with
+ the previous condition 
+\begin_inset Formula $\mathbf{\Phi}_{k-1}$
+\end_inset
+
+ and the model error covariance 
+\begin_inset Formula $\mathbf{Q}_{k}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbf{P}_{k|k+1}=\mathbf{\Phi}_{k-1}^{T}\mathbf{P}_{k-1|k-1}\mathbf{\Phi}_{k-1}+\mathbf{Q}_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Compute the Kalman Gain
+\begin_inset Formula 
+\[
+\mathbf{K}_{k}=\mathbf{P}_{k|k+1}\mathbf{C}_{k-1}^{T}\left(\mathbf{C}_{k-1}\mathbf{P}_{k|k+1}\mathbf{C}_{k-1}^{T}+\mathbf{R}_{k}\right)^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Update the state estimation using the residual 
+\begin_inset Formula $\tilde{\mathbf{y}}_{k}-\mathbf{y}_{k}$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathbf{y}_{k}$
+\end_inset
+
+ are the measurement the observer takes as input.
+ 
+\begin_inset Formula 
+\[
+\mathbf{x}_{k|k}=\mathbf{x}_{k|k-1}+\mathbf{K}_{k}\left(\tilde{\mathbf{y}}_{k}-\mathbf{y}_{k}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Update the state error covariance
+\begin_inset Formula 
+\[
+\mathbf{P}_{k|k}=\left(\mathbf{I}-\mathbf{C}_{k}^{T}\mathbf{K}\right)\mathbf{P}_{k|k+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+This procedure can be applied to continuous, discrete and continuous-discrete
+ systems.
+ In the latter case, where the system is continuous and the measurements
+ are discrete, it is needed to just add one step with the sampling of the
+ state and state error estimation covariance matrix.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Extended Kalman Filter
+\end_layout
+
+\begin_layout Standard
+\noindent
+In case the system is not linear it is possible to use the so called Extended
+ Kalman Filter (EKF) with the iterative procedure described above and linearizin
+g the system at each step around the previous known estimate.
+ The optimality of the KF is lost but this technique has been widely used
+ and its robust.
+ Sometimes it suffers from filter divergence.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\mathbf{x}} & =a\left(\mathbf{x},\, t\right)+b\left(\mathbf{u},\, t\right)\\
+\mathbf{y} & =c\left(\mathbf{x},\, t\right)+d\left(\mathbf{u},\, t\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this case 
+\begin_inset Formula $a,\, b,\, c,\, d$
+\end_inset
+
+ are non linear function.
+ It is possible to return to the previous kind of representation by simply
+ linearizing the functions:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{A}=\left.\frac{\partial a\left(\mathbf{x},\, t\right)}{\partial\mathbf{x}}\right|_{\mathbf{x}\left(t\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ in general depends on the state and or time, therefore it is often necessary
+ to compute it again.
+ If we talk about discrete systems the process refers to the previous step.
+ In this case the optimality of the Kalman filter is lost, however good
+ results can still be achieved.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the recursive KF the estimation of the next state and measurements can
+ be carried out using the non-linear model in order to increase precision.
+\end_layout
+
+\begin_layout Section
+\noindent
+Optimal Control 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The theory behind optimal control is not trivial and the interested readers
+ are suggested to look at ordinary textbooks.
+ One interesting thing to address is that in linear systems the observer
+ problem and the controller problem are disjointed, therefore we can address
+ the control and the observer separately.
+ A controller that makes use of optimal control is often called Linear Quadratic
+ Regulator (LQR) and is, by all means, a linear system that can be written
+ in state space form.
+ If the controller incorporates an optimal estimator (a Kalman Filter) the
+ result is the same and it takes the name Linear Quadratic Gaussian Regulator,
+ due to the fact that the state and measurement error are modeled as white
+ noises with Gaussian distribution.
+ To generate a constant LQGR we need information on the model and measurement
+ error covariance as well as the performance that we want to minimize and
+ the control action that we want to use.
+ Setting all these parameter is not trivial and requires experience, knowledge
+ and extensive trial/error practice.
+ 
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Blimp Navigation
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this section we will address some of the possible methods useful for
+ the blimp navigation.
+ First of all we must review the sensors , then we will address the design
+ of navigation using such sensors.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Sensors
+\end_layout
+
+\begin_layout Standard
+\noindent
+The available sensors are:
+\end_layout
+
+\begin_layout Itemize
+\noindent
+accelerometers,
+\end_layout
+
+\begin_layout Itemize
+\noindent
+gyroscopes,
+\end_layout
+
+\begin_layout Itemize
+\noindent
+magnetometers,
+\end_layout
+
+\begin_layout Itemize
+\noindent
+altimeters,
+\end_layout
+
+\begin_layout Itemize
+\noindent
+ultrasonic ranging sensor.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Some instruments cannot be used alone, other require special handling to
+ give useful information.
+ Some measure something related to the external environment, others make
+ no use of such information.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+In general accelerometers and gyroscopes are used together in the so called
+ Inertial Measurement Unit (IMU) and don't require any external information.
+ They prove to be useful when other kind of measures are not possible or
+ suffer from signal losses.
+ On the other hand using an IMU to reconstruct the trajectory is quite difficult
+ and the instrument errors make the position determination error diverge
+ quite easily.
+ accelerometers and gyroscopes are also prone to accumulate bias over time,
+ therefore the accuracy of these instruments is limited in time.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+On Earth IMU platform is often used a magnetometer in order to reduce the
+ drift of gyroscope integration: magnetometers can easily give a constant
+ reference direction.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Altimeters measures the external pressure and using an atmospheric model
+ such as the ISA it is possible to compute the altitude.
+ This sensors requires calibration and heavily depends on external conditions,
+ however is able to give precise measurement, even if sometimes may suffer
+ from lag.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The ultrasonic ranging sensor measures the distance of an object giving
+ a signal and measuring the time difference of the reflected signal.
+ The performance of the sensor may vary but its nature is quite different
+ from the others: it has a natural delay.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Choice of sensors
+\end_layout
+
+\begin_layout Standard
+\noindent
+Picking up all the sensors and putting them on the vehicle is not always
+ a good solution and often is not really possible.
+ In general one can think that the more sensors are available the more precise
+ the estimation will be, however is not always the case.
+ Moreover in general the navigation unit, as other subsystems, have constraints
+ of space, weight and power consumption, therefore the system must be optimized
+ for the task it must fulfill.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+If space and weight limits are fulfilled more sensors can be used, however
+ using all at once may not be the wisest solution.
+ It's important to understand that in some conditions certain sensors are
+ useless or can even worsen the estimation.
+ Sometimes certain sensors can be manipulated in a completely different
+ way in order to estimate something different: an accelerometer is used
+ to measure the trajectory, however if the blimp is anchored it can provide
+ the direction of the gravity field and together with the magnetometer can
+ define a good reference frame for the motion.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+It is very useful, in the early stage of the design, to define different
+ navigation modes, connected to the different modes of the vehicle during
+ its mission.
+ For example there could be a mode for the attitude determination before
+ moving, a safety check for obstacles using the ranging sensor or a navigation
+ mode for the final approach to target.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Inertial Navigation System
+\end_layout
+
+\begin_layout Standard
+\noindent
+IMU can be divided into two category: strap down systems or gimballed systems.
+ In the first application the IMU is fixed on the vehicle while on the second
+ application it is mounted on a moving platform that tries to match the
+ accelerometer orientation to that of the inertial systems chosen for motion
+ reference.
+ We will refer only to the first type for structural reasons.
+ since the platform is fixed the passage from body axes to inertial axes
+ must be carried out by the navigation algorithm.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Accelerometers measures a combination of acceleration such that they measure
+ 1g of acceleration skyward while on the ground.
+ In that case they measure the normal force that the ground uses to oppose
+ the gravity force so that the object is not falling.
+ We can therefore say that the acceleration in the inertial frame 
+\begin_inset Formula $\mathbf{a}_{i}$
+\end_inset
+
+ are 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\mathbf{a}_{i}=\mathbf{R}_{ib}\mathbf{a}_{m}+\mathbf{g}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathbf{R}_{ib}$
+\end_inset
+
+ is the rotation matrix that passes a vector from the body frame to the
+ inertial frame, 
+\begin_inset Formula $\mathbf{a}_{m}$
+\end_inset
+
+ is the vector of the measured accelerations and 
+\begin_inset Formula $\mathbf{g}$
+\end_inset
+
+ is the gravity acceleration written in the inertial reference frame.
+ The acceleration in the inertial frame is then integrated twice to get
+ first velocity and then position.
+ During each integration step also the instrument noise is integrated and
+ generates a huge drift in the position.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The variation in time of 
+\begin_inset Formula $\mathbf{R}_{ib}$
+\end_inset
+
+ is made using the measured angular velocities and a suitable attitude kinematic
+ method as those seen on previous lessons.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+One popular approach to refine IMU measurement is to use a indirect Kalman
+ filter where the Inertial Navigation System is the system and another set
+ of sensors provide measures of the INS error.
+ To generate such model one must take into account the noise and the random
+ walk
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A low frequency error that can be modeled as the integral of a white noise
+\end_layout
+
+\end_inset
+
+ of the IMU.
+ The system thus generated is linear but time dependent.
+ If this kind of approach is pursued one must choose other sensors to be
+ able to measure position and attitude and make sure that the system is
+ observable.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Altimeter
+\end_layout
+
+\begin_layout Standard
+\noindent
+The altimeter measures the pressure (barometer) and through a air model
+ gives back the altitude.
+ There are different air models and difference reference pressure, but for
+ our application we will use a basic model.
+ It is important to notice that the measure of altitude is indirect and
+ affected by the air near the vehicle, therefore is not always accurate.
+ 
+\end_layout
+
+\begin_layout Section
+\noindent
+Ranging Sensor
+\end_layout
+
+\begin_layout Standard
+\noindent
+The ranging sensor output is the distance between the sensor and the first
+ obstacle that crosses its path.
+ In general the sensor should give the distance along the normal direction
+ and it is limited in range.
+ Usually the precision of the sensor depends on the distance from the obstacle,
+ meaning that the nearer it is, the better the measure is.
+ Of course there is a minimum distance that the sensor can measure: if the
+ object is closer the response of the sensor will be anyway the minimum
+ measurable distance.
+\end_layout
+
+\begin_layout Standard
+\noindent
+This ranging sensor can be used to detect obstacle in the blimp path or
+ to determine the distance from the ground to better estimate altitude.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+More advanced ranging sensors can be used also to determine the speed of
+ the vehicle through Doppler effect.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\noindent
+Appendix
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Function name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Notes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pinv
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+computes the pseudo inverse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+place
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+get 
+\begin_inset Formula $\mathbf{L}$
+\end_inset
+
+ to have certain poles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+use 
+\begin_inset Formula $\mathbf{C}^{T}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kalman
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kalman observer design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lqr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+design a LQR controller
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lqgr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+design a LQGR controller
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ss
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+generate a state space object
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+obsv
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+get observability matrix
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ctrb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+get controllability matrix
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+eig
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+get eigenvalue of a matrix
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+poles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+compute poles of a ss system
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pzmap
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+plot poles and zeros of ss system
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Type 
+\begin_inset Quotes eld
+\end_inset
+
+help namefunction
+\begin_inset Quotes erd
+\end_inset
+
+ to have the description of input/output and options of the selected function.
+ 
+\end_layout
+
+\end_body
+\end_document

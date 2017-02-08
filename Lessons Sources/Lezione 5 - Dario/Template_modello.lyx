@@ -1,0 +1,1150 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\input{Settings.tex}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman palatino
+\font_sans helvet
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc true
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement bph
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 4cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titlepage.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Titleback.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+What is Arduino
+\end_layout
+
+\begin_layout Standard
+\noindent
+Arduino is a single-board microcontroller inteded to make the application
+ of interactive objects or enviroment more accessible.
+ So Arduino can be used for fast prototiping, or for building small robots
+ (or an airship, like in our case).
+\end_layout
+
+\begin_layout Standard
+\noindent
+Pre-programmed into the on-board microcontroller chip is a boot loader that
+ allows uploading programs into the microcontroller memory without needing
+ a chip (device) programmer, simply by using the USB port.
+ Arduino is provided with input/output functionality so the board can send/recei
+ve data to the external sensors.
+ The behaviour of the board is managed by microcontroller based on the decisions
+ implemented on the program that’s running on the board.
+ The board may also interact with the external enviroment by using actuator
+ driven by the pro- gram trought the output channels.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_001.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Arduino
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Programming Arduino with Simulink
+\end_layout
+
+\begin_layout Standard
+\noindent
+Simulink can be enhanced with different kind of libraries, so we can simulate
+ the behaviour of a large variety of system and plus, Simulink can be used
+ to run our simulation on a targetted hardware board, in this case for example
+ we are going to use an Arduino Uno, but also STM32 BeagleBoard and Raspberry
+ Pi can be used, MathWorks is putting a lot of effort in supporting various
+ kind of board at every new relase of MATLAB.
+\end_layout
+
+\begin_layout Section
+\noindent
+A first simple example
+\end_layout
+
+\begin_layout Standard
+\noindent
+So let’s start to play together with the Arduino Uno board and Simulink.
+ In this first example you will learn how to interface Arduino with Simulink,
+ so we can generate a firmware compatible with the board starting from our
+ model built and tested on Simulink.
+\end_layout
+
+\begin_layout Standard
+\noindent
+First open up Simulink, simply by typing simulink from the MATLAB command
+ prompt, so the Simulink library browser will show up.
+\end_layout
+
+\begin_layout Standard
+\noindent
+For this first simple example we are going to use blocks from the Simulink
+ blockset and from the Simulink Support Package for Arduino Hardware blockset.
+ Let’s start a new blank project by clicking on File > New > Model.
+ We want to control the digital output of the Arduino Board in order to
+ made a led blink at specified time interval, so first we need to select
+ a Pulse Generator, simply by drag and dropping the Pulse Generator block
+ in the model window.
+ We need the Pulse Generator in order to generate the signal that we will
+ sent to the digital output of the Arduino Uno board :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_020.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pulse Generator
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Then we need to connect the pulse generator to the digital outpu of the
+ Arduino Uno board.
+ So let’s browse the Simulink Support Package for Arduino Hardware blockset
+ and select the digital output block.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_021.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Digital Output Block
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In order to made our model work, we need to set the corret pulse type of
+ our pulse generator, so as our signal should control a digital output,
+ we need to set the “sample based” pulse type and set the sample time to
+ 0.1 (or wichever value you want to set) :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_022.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sample Generator Options
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Now we are ready to test our model consistency with Simulink.
+ Let’s connect a scope between the Pulse Generator block and the digital
+ output block, and next cick Run.
+ Double clicking on the scope will show us the results of our simulation
+ :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_023.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Simulation Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Now we are ready to build the real circuit and to download the firmware
+ to the Arduino Uno board.In the figure below is rapresented the wiring
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_004.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+LED Wiring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+So, after the wiring is done, we need to connect the Arduino Uno board to
+ our PC trought the USB cable.
+ On Simulink let’s click on Tools > Run on Target Hardware > Prepare to
+ Run.
+ A window will pop-up, we need to chose the Arduino Uno target hardware,
+ then click Apply.
+ The Simulink defaults settings are perfectly suitable for our needs.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_005.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+LED Wiring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Now click again on Tools > Run on Target Hardware > Run.
+ Simulink will automatically generate the necessay C code based on our model,
+ and will flash the firmware on the board.
+ Take a look to the led, should blink.
+\end_layout
+
+\begin_layout Section
+\noindent
+Traffig Light Controller
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this example we will gonna use MathWorks StateFlow in order to simulate
+ the logic of a Traffic Light, then we will download the model on Arduino.
+ Stateflow is a graphical design and development tool for control and supervisor
+y logic that can be used in conjuction with Simulink.
+ So with Stateflow we can model and simulate combinatorial and sequential
+ decision logic based on state machines and flow charts, like for example,
+ a traffic light controller :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_006.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Stateflow
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+So, in order to use the stateflow chart, we need to connect the output of
+ the state machine to Arduino Digital Output Block, build the circuit, and
+ then we have to deploy the model on the hardware :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_007.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Traffic Light Controller
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_008.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Traffic Light Controller Wiring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\noindent
+Servo Control
+\end_layout
+
+\begin_layout Standard
+\noindent
+With the Simulink Support Package for Arduino we can also command a servo,
+ trought the Standard Servo Write Block.
+ Let’s see an example.
+ Open a new model, then input the desired shaft angle and connect the desired
+ shaft angle block to the servo block.
+ Then deploy the model on the hardware.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_009.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Servo Control
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_010.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Servo Wiring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\noindent
+Sensors Reading with Simulink and Arduino
+\end_layout
+
+\begin_layout Section
+\noindent
+What is a MEMs
+\end_layout
+
+\begin_layout Standard
+\noindent
+The sensor that we will use are known as MEMs (Microelectromechanical systems).
+ MEMS, is a technology that in its most general form can be defined as miniaturi
+zed mechanical and electro-mechanical elements (i.e., devices and structures)
+ that are made using the techniques of microfabrication.
+ The critical physical dimensions of MEMS devices can vary from well below
+ one micron on the lower end of the dimensional spectrum, all the way to
+ several millimeters.
+ Likewise, the types of MEMS devices can vary from relatively simple structures
+ having no mov- ing elements, to extremely complex electromechanical systems
+ with multiple moving elements under the control of integrated microelectronics.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_011.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MEMs Accelerometer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+MEMS typically converts a measured mechanical signal into an electrical
+ signal The real potential of this kind of device, is that these miniatured
+ sensors can me merged onto a common silicon substrate along with integrated
+ circuit process sequences, and so you can interface a MEMs, for example,
+ with an Arduino board .
+\end_layout
+
+\begin_layout Section
+\noindent
+MEMs communication interface
+\end_layout
+
+\begin_layout Standard
+\noindent
+Our MEMs communicates with Arduino trought a bus called I2C (Inter-Integrated
+ Circuit).
+ The I2C bus transmits data and clock with SDA and SCL.
+ .
+ SCL is the clock line.
+ It is used to synchronize all data transfers over the I2C bus.
+ SDA is the data line.
+ First thing to realize: SDA and SCL are open-drain (also known as open-collecto
+r in the TTL world), that is I2C master and slave devices can only drive
+ these lines low or leave them open.
+ The termination resistor (pull-up resistors) pulls the line up to Vcc if
+ no I2C device is pulling it down.
+ This allows for features like concurrent operation of more than one I2C
+ master (if they are multi-master capable) or stretching (slaves can slow
+ down communication by holding down SCL).
+ The devices on the I2C bus are either masters or slaves.
+ The master is always the device that drives the SCL clock line.
+ The slaves are the devices that respond to the master.
+ A slave cannot initiate a transfer over the I2C bus, only a master can
+ do that.
+ There can be, and usually are, multiple slaves on the I2C bus, however
+ there is normally only one master.
+ It is possible to have multiple masters, but it is unusual and not covered
+ here.
+ On your robot, the master will be your controller and the slaves will be
+ our modules such as the SRF08 or CMPS03.
+ Slaves will never initiate a transfer.
+ Both master and slave can transfer data over the I2C bus, but that transfer
+ is always controlled by the master.
+ In our case the master is Arduino, the slave are the sensors.
+ We can connect how many slaves that we want to one master trought the I2C
+ interface (the sensors can share SDA and SCL lines).
+ At this point should be clear the wiring : you simply have to connect SDA
+ and SCL to the SDA and SCL pins of Arduino board, GND to GND and VCC to
+ the sensors specified logic voltage (3.3V or 5V).
+\end_layout
+
+\begin_layout Section
+\noindent
+Skyward BLIMP Target
+\end_layout
+
+\begin_layout Standard
+\noindent
+In order to make life easy to people who wants to drive sensors trough Simulink,
+ we have developed a Simulink Library that contains all the device drivers
+ blocks that we will going to use on the BLIMP.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The installation is pretty easy, you only ave to place the “Libreria” folder
+ somewere, then you have to open the folder in matlab (the folder contents
+ should be shown in MATLAB current folder) and run the SkywardConfigureScript.
+ The script will take care of adding corrects path to MATLAB and to add
+ the library to simulink.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_015.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+BLIMP Target Installation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_016.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+BLIMP Target Library
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\noindent
+Read Data from Sensors
+\end_layout
+
+\begin_layout Standard
+\noindent
+Once we have create a new model using those blocks, we can for example see
+ what kinds of data are processed trought the Serial port by adding a Serial
+ Transmit block and using the Serial Receive block.
+ The serial receive can send those datas to workspace, or you can connect
+ a scope, for example, to see the graph of data versus time.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Remember to always convert datas trought data type conversion block to uint8
+ right before the Serial Transmit block (because this block can only print
+ integer variables).
+\end_layout
+
+\begin_layout Standard
+\noindent
+This is an example of a model to create in order to send datas to the serial
+ port :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_017.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Serial Transmit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+And his is the model to create for the serial receive :
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_018.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Serial Receive
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Keep in mind that “On Target” execution is different from “Simulation”.
+ In lesson 4 you have seen Simulation, so when a model is simulated, it
+ is executed on your computer.
+ The other way in which a model like the ones in the previous pictures can
+ be executed is by generating (from the model) an executable that runs (typicall
+y in real time) on the target platform (Arduino in our case), and unlike
+ what happens when you simulate the model on the host computer, this executable
+ will be downloaded on Arduino and runs on it.
+ So you can’t connect for example a scope in a model that should be downloaded
+ to Arduino to watch data, instead you should tell to Arduino to send datas
+ to Serial Port (0) and you can watch it trought Serial Receive.
+\end_layout
+
+\begin_layout Section
+\noindent
+PID Example
+\end_layout
+
+\begin_layout Standard
+\noindent
+As we said before, you can generate trought Simulink Arduino firmware without
+ writing C code, and this extremely speeds up the prototyping phase.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+An example of thi powerful tool is the following PID controller, created
+ by using both Arduino Support Package, Simulink standard blocks, and ours
+ Skyward Target for BLIMP.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/Selezione_019.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+PID Example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

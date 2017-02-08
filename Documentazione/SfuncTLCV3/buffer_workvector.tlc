@@ -1,0 +1,62 @@
+%% Abstract:
+%%      Tlc file for S-function buffer_workvector.c
+%%
+%% Copyright TATA ELXSI
+%%
+
+
+%implements "buffer_workvector" "C"
+
+%% Function: BlockTypeSetup ================================
+%% Abstract:
+%%      Create function prototype in model.h as:
+%%
+%function BlockTypeSetup(block, system) void
+  %openfile buffer
+
+  extern  void UpdateBuffer(real_T* rptr, int_T* iptr, real_T* u) ;
+
+  %closefile buffer
+  %<LibCacheFunctionPrototype(buffer)>
+%endfunction %% BlockTypeSetup
+
+%% Function: Initialize conditions==========================
+%function InitializeConditions(block, system) Output
+    {
+	  int i ;
+      real_T *rwork = &(%<LibBlockRWork(buffer_real, "", "", 0)>); %%Getting the address of Rworkvector
+      int_T *iwork = &(%<LibBlockIWork(buffer_int, "", "", 0)>);  %%Getting the address of Iworkvector
+      
+	  for(i = 0; i<50; i++)
+		  rwork[i] = %<SFcnParamSettings.InitValue> ;
+		  
+	  iwork[0] = (int)%<SFcnParamSettings.BufSize> ; //max buffer size
+	  iwork[1] = (int)%<SFcnParamSettings.OutSize> ; //max output width
+	  iwork[2] = 0 ; //buffer_top
+	  iwork[3] = 0 ; //stack top
+    }
+%endfunction
+
+%% Function: Outputs =======================================
+
+%function Outputs(block, system) Output
+  
+  /* %<Type> Block: %<Name> */
+  %assign uaddr = LibBlockInputSignalAddr(0, "", "", 0)  
+  {
+      real_T* yaddr = %<LibBlockOutputSignalAddr(0, "", "", 0)> ;
+       
+      real_T *rwork = &(%<LibBlockRWork(buffer_real, "", "", 0)>);
+      int_T *iwork = &(%<LibBlockIWork(buffer_int, "", "", 0)>);    
+      int_T i ;      
+      UpdateBuffer(rwork, iwork, %<uaddr>) ;
+	  for(i=0; i <iwork[1]; i++)
+	  {	
+		if((iwork[2]) < 0) 
+			iwork[2] = iwork[0]-1 ;
+		yaddr[i] = rwork[iwork[2]] ;			
+		iwork[2]-- ;
+	 }
+  }
+%endfunction %% Outputs
+
